@@ -27,6 +27,7 @@
     "generate:kit": "node tools/gen-kit-registry.mjs",
     "generate": "npm run generate:barrel && npm run generate:kit",
     "test:smoke": "node tools/react-probe.mjs",
+    "test:builder": "node tools/builder-smoke.mjs",
     "pack:ui": "npm pack --workspace=@digikit/ui"
   },
   "devDependencies": {

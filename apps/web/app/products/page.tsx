@@ -21,7 +21,7 @@ export default function ProductsShowcase() {
 
   return (
     <div className={s.page}>
-      <SectionHeader title="کارت‌های کالا" seeAllHref="/" />
+      <SectionHeader title="کارت‌های کالا" seeAllHref="/shop" />
 
       <section className={s.section}>
         <h2 className={s.heading}>گرید مویی (bareGrid) — مثل نتایج جستجو</h2>

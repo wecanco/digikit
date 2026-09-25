@@ -1,161 +1,117 @@
-'use client';
-
-/* ویترین ۱ — پریمیتیوها: دکمه، قیمت، امتیاز، بج، چیپ، استپر، شمارش معکوس،
-   توست، اسپینر، اسکلتون، اینپوت، مودال، بات‌شیت، تب، بردکرامب، کاروسل */
-
-import { useState } from 'react';
+import type { ReactNode } from 'react';
+import Link from 'next/link';
 import {
-  Button,
-  Price,
-  Rating,
-  BadgeCircle,
-  Chip,
-  SectionHeader,
-  Stepper,
-  Countdown,
-  ToastProvider,
-  useToast,
-  Spinner,
-  Skeleton,
-  Input,
-  SearchPill,
-  Modal,
-  BottomSheet,
-  Tabs,
-  Breadcrumb,
-  ScrollCarousel,
-  PlaceholderImage,
-} from '@digikit/ui';
-import s from './showcase.module.css';
+  ArrowUpLeft,
+  BookOpen,
+  Boxes,
+  BriefcaseBusiness,
+  Building2,
+  ChartNoAxesCombined,
+  CircleUserRound,
+  CreditCard,
+  FileCog,
+  Heart,
+  LayoutDashboard,
+  Search,
+  ShoppingBag,
+  ShoppingCart,
+  Sparkles,
+  Store,
+  Tags,
+  UserRoundPlus,
+} from 'lucide-react';
+import s from './home.module.css';
 
-function ToastDemo() {
-  const toast = useToast();
+interface HubTile {
+  href: string;
+  title: string;
+  description: string;
+  meta: string;
+  icon: ReactNode;
+  tone: 'red' | 'blue' | 'green' | 'purple' | 'cream';
+  featured?: boolean;
+}
+
+interface HubGroup {
+  eyebrow: string;
+  title: string;
+  description: string;
+  tiles: HubTile[];
+}
+
+const hubGroups: HubGroup[] = [
+  {
+    eyebrow: 'BUILD & DOCUMENT',
+    title: 'ساخت، مشاهده و مدیریت سیستم',
+    description: 'از componentها و الگوهای UI تا ساخت صفحه‌ی قابل خروجی، همه در یک مسیر روشن.',
+    tiles: [
+      { href: '/kit', title: 'راهنمای کامپوننت‌ها', description: 'تمام exportهای UI را با کنترل زنده، جستجو و کد آماده ببین.', meta: 'UI KIT · INTERACTIVE', icon: <BookOpen size={20} />, tone: 'blue', featured: true },
+      { href: '/kit/showcase', title: 'ویترین جامع کیت', description: 'سناریوهای فرم، محصول، checkout، وضعیت‌ها و الگوهای ترکیبی.', meta: 'FULL SHOWCASE', icon: <Boxes size={20} />, tone: 'purple' },
+      { href: '/builder/dashboard', title: 'داشبورد صفحه‌ساز', description: 'صفحه‌ها، قالب‌ها، backup و workspace محلی را مدیریت کن.', meta: 'LOCAL WORKSPACE', icon: <LayoutDashboard size={20} />, tone: 'red', featured: true },
+      { href: '/builder', title: 'صفحه‌ساز', description: 'ماژول‌ها را بکش، بچین، responsive کن و JSON، TSX یا HTML بگیر.', meta: 'DRAG & DROP', icon: <FileCog size={20} />, tone: 'green' },
+    ],
+  },
+  {
+    eyebrow: 'SHOPPING EXPERIENCE',
+    title: 'ویترین‌ها و جریان‌های خرید',
+    description: 'صفحه‌ی نمونه‌ی فروشگاه را از اینجا باز کن یا هر مرحله‌ی تجربه‌ی خرید را جدا ببین.',
+    tiles: [
+      { href: '/shop', title: 'پوسته‌ی فروشگاهی', description: 'هدر، خدمات، کمپین، پیشنهاد ویژه و گرید کالا در یک پوسته‌ی کامل.', meta: 'CANONICAL SHOP SHELL', icon: <Store size={20} />, tone: 'red', featured: true },
+      { href: '/products', title: 'کارت‌های کالا', description: 'گرید ساده، bare grid، شگفت‌انگیز، سوپرمارکت و حالت ردیفی.', meta: 'PRODUCT CARDS', icon: <ShoppingBag size={20} />, tone: 'cream' },
+      { href: '/product', title: 'صفحه‌ی محصول', description: 'گالری، مشخصات، انتخاب‌ها، قیمت و افزودن به سبد را تجربه کن.', meta: 'PRODUCT DETAIL', icon: <ChartNoAxesCombined size={20} />, tone: 'blue' },
+      { href: '/search', title: 'جستجو و فیلتر', description: 'نتایج، فیلترهای فروشگاهی، sort bar و pagination.', meta: 'SEARCH FLOW', icon: <Search size={20} />, tone: 'purple' },
+      { href: '/categories', title: 'دسته‌بندی‌ها', description: 'دسته‌های فروشگاهی با مسیر ورود به نتایج مرتبط.', meta: 'CATEGORIES', icon: <Tags size={20} />, tone: 'green' },
+      { href: '/amazing', title: 'پیشنهاد شگفت‌انگیز', description: 'کمپین تخفیف با countdown و کارت‌های ویژه.', meta: 'CAMPAIGN', icon: <Sparkles size={20} />, tone: 'red' },
+      { href: '/supermarket', title: 'سوپرمارکت', description: 'ویترین رنگی کالاهای روزمره و گرید مخصوص سوپرمارکت.', meta: 'SUPERMARKET', icon: <BriefcaseBusiness size={20} />, tone: 'cream' },
+      { href: '/cart', title: 'سبد خرید', description: 'ویرایش اقلام، جمع سفارش و پیشنهادهای ادامه‌ی خرید.', meta: 'CART', icon: <ShoppingCart size={20} />, tone: 'blue' },
+      { href: '/checkout', title: 'checkout', description: 'آدرس، روش ارسال، کد تخفیف و خلاصه‌ی پرداخت.', meta: 'CHECKOUT', icon: <CreditCard size={20} />, tone: 'green' },
+    ],
+  },
+  {
+    eyebrow: 'ACCOUNT & CONTENT',
+    title: 'حساب کاربری، محتوا و همکاری',
+    description: 'مسیرهای مکمل محصول را برای بررسی حالت‌های واقعی و empty stateها باز کن.',
+    tiles: [
+      { href: '/profile', title: 'پروفایل کاربر', description: 'اطلاعات کاربر، سفارش‌ها، آدرس‌ها و علاقه‌مندی‌ها.', meta: 'PROFILE', icon: <CircleUserRound size={20} />, tone: 'purple' },
+      { href: '/favorites', title: 'علاقه‌مندی‌ها', description: 'لیست کالاهای ذخیره‌شده و حالت خالی آن.', meta: 'FAVORITES', icon: <Heart size={20} />, tone: 'red' },
+      { href: '/login', title: 'ورود', description: 'فرم ورود local-first با اعتبارسنجی و پیام خطا.', meta: 'AUTH FLOW', icon: <UserRoundPlus size={20} />, tone: 'blue' },
+      { href: '/sell', title: 'فروشنده شوید', description: 'بنر جذب فروشنده و فرم درخواست همکاری.', meta: 'SELLER FLOW', icon: <Building2 size={20} />, tone: 'green' },
+      { href: '/mag', title: 'مجله', description: 'صفحه‌ی محتوایی با کارت‌ها و دسته‌بندی مطالب.', meta: 'MAGAZINE', icon: <BookOpen size={20} />, tone: 'cream' },
+      { href: '/mag-post', title: 'مقاله', description: 'نمایش جزئیات یک مطلب و ساختار خواندن محتوا.', meta: 'ARTICLE', icon: <ArrowUpLeft size={20} />, tone: 'purple' },
+    ],
+  },
+];
+
+function HubTileCard({ tile }: { tile: HubTile }) {
   return (
-    <div className={s.row}>
-      <Button variant="outline" onClick={() => toast.show('به سبد خرید اضافه شد', 'success')}>موفق</Button>
-      <Button variant="outline" onClick={() => toast.show('خطا در برقراری ارتباط', 'error')}>خطا</Button>
-      <Button variant="outline" onClick={() => toast.show('قیمت کالا به‌روزرسانی شد', 'info')}>اطلاع</Button>
-    </div>
+    <Link className={`${s.tile} ${s[`tile${tile.tone[0].toUpperCase()}${tile.tone.slice(1)}`]} ${tile.featured ? s.tileFeatured : ''}`} href={tile.href}>
+      <span className={s.tileIcon} aria-hidden="true">{tile.icon}</span>
+      <span className={s.tileBody}><span className={s.tileMeta}>{tile.meta}</span><strong>{tile.title}</strong><span className={s.tileDescription}>{tile.description}</span></span>
+      <ArrowUpLeft size={17} className={s.tileArrow} aria-hidden="true" />
+    </Link>
   );
 }
 
-export default function PrimitivesShowcase() {
-  const [qty, setQty] = useState(1);
-  const [tab, setTab] = useState('orders');
-  const [modal, setModal] = useState(false);
-  const [sheet, setSheet] = useState(false);
+export default function HomePage() {
+  const totalTiles = hubGroups.reduce((total, group) => total + group.tiles.length, 0);
 
   return (
-    <ToastProvider>
-      <div className={s.page}>
-        <SectionHeader title="پریمیتیوها" />
+    <main className={s.home}>
+      <header className={s.header}>
+        <Link href="/" className={s.brand} aria-label="صفحه‌ی اصلی دیجی‌کیت"><span className={s.brandMark}>د</span><span><strong>دیجی‌کیت</strong><small>RTL PRODUCT SYSTEM</small></span></Link>
+        <div className={s.headerActions}><span className={s.localBadge}><span /> بدون API · local-first</span><Link href="/shop" className={s.headerLink}>باز کردن فروشگاه <ArrowUpLeft size={15} /></Link></div>
+      </header>
 
-        <section className={s.section}>
-          <h2 className={s.heading}>دکمه‌ها</h2>
-          <div className={s.row}>
-            <Button>افزودن به سبد</Button>
-            <Button variant="outline">مشاهده همه</Button>
-            <Button variant="ghost">انصراف</Button>
-            <Button variant="amazing">پیشنهاد شگفت‌انگیز</Button>
-            <Button pill>خرید</Button>
-            <Button variant="amazing" pill>شگفت‌انگیز</Button>
-          </div>
-        </section>
+      <section className={s.hero}>
+        <div className={s.heroCopy}><span className={s.eyebrow}>DIGIKIT DIRECTORY</span><h1>همه‌ی تجربه‌ها، یک خانه‌ی ساده.</h1><p>یک هاب کاشی‌محور برای دیدن سیستم طراحی، صفحات نمونه، جریان‌های خرید و صفحه‌ساز محلی؛ هر مسیر را مستقیم باز کن.</p><div className={s.heroActions}><Link href="/shop" className={s.primaryAction}><Store size={16} />پوسته‌ی فروشگاهی</Link><Link href="/builder/dashboard" className={s.secondaryAction}><LayoutDashboard size={16} />مدیریت صفحات</Link></div></div>
+        <div className={s.heroPanel}><div className={s.heroPanelTop}><span className={s.heroPanelLabel}>یک نقطه‌ی شروع</span><span className={s.heroPanelDot} /></div><strong>{totalTiles.toLocaleString('fa-IR')} مسیر آماده</strong><span>از component خام تا checkout کامل، بدون گم‌شدن بین routeها.</span><div className={s.heroPanelGrid}><span><b>۳</b><small>گروه اصلی</small></span><span><b>۱۰۰٪</b><small>محلی و مستقل</small></span></div></div>
+      </section>
 
-        <section className={s.section}>
-          <h2 className={s.heading}>قیمت و امتیاز و بج</h2>
-          <div className={s.row}>
-            <Price price={455000} oldPrice={700000} />
-            <Price price={455000} />
-            <Price price={1290000} oldPrice={1890000} size="sm" />
-            <Rating rating={4.6} count={2541} />
-            <Rating rating={4.6} count={2541} single />
-            <BadgeCircle discount={35} />
-            <BadgeCircle discount={12} size="sm" />
-          </div>
-        </section>
+      <nav className={s.groupList} aria-label="بخش‌های دیجی‌کیت">
+        {hubGroups.map((group) => <section className={s.group} key={group.eyebrow}><div className={s.groupHeading}><div><span className={s.eyebrow}>{group.eyebrow}</span><h2>{group.title}</h2></div><p>{group.description}</p></div><div className={s.tileGrid}>{group.tiles.map((tile) => <HubTileCard key={tile.href} tile={tile} />)}</div></section>)}
+      </nav>
 
-        <section className={s.section}>
-          <h2 className={s.heading}>چیپ و استپر و تب</h2>
-          <div className={s.row}>
-            <Chip>گوشی موبایل</Chip>
-            <Chip active>لپ‌تاپ</Chip>
-            <Chip>هدفون</Chip>
-            <Stepper value={qty} onChange={setQty} />
-          </div>
-          <Tabs
-            items={[{ id: 'orders', title: 'سفارش‌ها' }, { id: 'favs', title: 'علاقه‌مندی‌ها' }, { id: 'seen', title: 'بازدیدهای اخیر' }]}
-            active={tab}
-            onChange={setTab}
-          />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>شمارش معکوس</h2>
-          <div className={s.redBand}>
-            <div className={s.row}>
-              <Countdown hoursAhead={5} theme="onRed" />
-              <Countdown hoursAhead={5} theme="heroWhite" />
-            </div>
-          </div>
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>توست</h2>
-          <ToastDemo />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>اسپینر و اسکلتون</h2>
-          <div className={s.row}>
-            <Spinner />
-            <Spinner size={36} />
-            <Skeleton variant="text" width={180} />
-            <Skeleton variant="circle" width={48} height={48} />
-          </div>
-          <div className={s.grid}>
-            <Skeleton variant="card" />
-            <Skeleton variant="card" />
-            <Skeleton variant="card" />
-          </div>
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>ورودی‌ها</h2>
-          <div className={s.row}>
-            <Input placeholder="نام و نام خانوادگی" />
-            <Input variant="search" placeholder="جستجو" />
-            <Input variant="searchMuted" placeholder="جستجو در دیجی‌کیت" />
-          </div>
-          <SearchPill overlay />
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>مودال و بات‌شیت</h2>
-          <div className={s.row}>
-            <Button variant="outline" onClick={() => setModal(true)}>باز کردن مودال</Button>
-            <Button variant="outline" onClick={() => setSheet(true)}>باز کردن بات‌شیت</Button>
-          </div>
-          <Modal open={modal} onClose={() => setModal(false)} title="انتخاب رنگ">
-            <p>کدام رنگ را می‌پسندید؟</p>
-          </Modal>
-          <BottomSheet open={sheet} onClose={() => setSheet(false)} title="گزینه‌های مرتب‌سازی">
-            <p>پرفروش‌ترین · جدیدترین · ارزان‌ترین</p>
-          </BottomSheet>
-        </section>
-
-        <section className={s.section}>
-          <h2 className={s.heading}>بردکرامب و کاروسل</h2>
-          <Breadcrumb items={[{ title: 'دیجی‌کیت', href: '/' }, { title: 'کالای دیجیتال', href: '/search?cat=digital' }, { title: 'موبایل' }]} />
-          <ScrollCarousel arrows>
-            {Array.from({ length: 10 }, (_, i) => (
-              <div key={i} style={{ minWidth: 150 }}>
-                <PlaceholderImage seed={100 + i} label={`کالا ${i + 1}`} />
-              </div>
-            ))}
-          </ScrollCarousel>
-        </section>
-      </div>
-    </ToastProvider>
+      <footer className={s.footer}><span>دیجی‌کیت · ویترین RTL برای محصولات فارسی</span><div><Link href="/kit">راهنمای UI</Link><Link href="/builder">صفحه‌ساز</Link><Link href="/shop">فروشگاه نمونه</Link></div></footer>
+    </main>
   );
 }
