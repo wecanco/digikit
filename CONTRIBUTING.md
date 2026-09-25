@@ -54,9 +54,11 @@ npm run pack:ui
 ```bash
 npm run start --workspace=@digikit/web
 npm run test:smoke
+npm run test:builder
+npm run test:site
 ```
 
-smoke check به Chrome نصب‌شده نیاز دارد. اگر محیط شما Chrome یا وابستگی لازم را ندارد، محدودیت محیط را در PR ذکر کنید و نتیجه را به‌عنوان failure محصول گزارش نکنید.
+برای تغییرهای صفحه‌ساز، `test:builder` و برای خروجی سایت استاتیک، `test:site` را اجرا کنید. smoke checkها به Chrome نصب‌شده یا `DIGIKIT_CHROME_PATH` نیاز دارند. اگر محیط شما Chrome یا وابستگی لازم را ندارد، محدودیت محیط را در PR ذکر کنید و نتیجه را به‌عنوان failure محصول گزارش نکنید.
 
 ## pull request
 

@@ -368,7 +368,11 @@ export function generateHtmlCode(document: BuilderDocument, assets: BuilderAsset
 
 export function downloadText(filename: string, content: string, type: string): void {
   if (typeof document === 'undefined') return;
-  const blob = new Blob([content], { type });
+  downloadBlob(filename, new Blob([content], { type }));
+}
+
+export function downloadBlob(filename: string, blob: Blob): void {
+  if (typeof document === 'undefined') return;
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
   anchor.href = url;

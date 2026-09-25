@@ -5,7 +5,8 @@ import { ArrowUpRight, CheckCircle2, ChevronLeft, Copy, Download, FileJson, File
 import { useRouter } from 'next/navigation';
 import { BUILDER_TEMPLATES, type BuilderTemplate } from '../builder-templates';
 import { cloneDocument } from '../builder-utils';
-import { downloadText } from '../builder-export';
+import { downloadBlob, downloadText } from '../builder-export';
+import { createStaticSiteArchive } from '../builder-site';
 import { ConfirmDialog } from '../ConfirmDialog';
 import {
   createBlankStoredPage,
@@ -331,6 +332,17 @@ export function DashboardClient() {
     showNotice('پشتیبان کامل workspace دانلود شد');
   }, [showNotice, state]);
 
+  const exportStaticSite = useCallback(() => {
+    if (!state || hasConflict) return;
+    try {
+      const archive = createStaticSiteArchive(state);
+      downloadBlob('digikit-static-site.zip', new Blob([Uint8Array.from(archive)], { type: 'application/zip' }));
+      showNotice('سایت استاتیک دانلود شد؛ برای نمایش عمومی آن را روی هاست منتشر کنید.');
+    } catch (error) {
+      showNotice(error instanceof Error ? error.message : 'ساخت سایت استاتیک ممکن نشد.');
+    }
+  }, [hasConflict, showNotice, state]);
+
   const importWorkspace = useCallback(async (file: File) => {
     try {
       if (file.size > MAX_BUILDER_IMPORT_BYTES) {
@@ -403,7 +415,7 @@ export function DashboardClient() {
       <main className={s.main}>
         <section className={s.hero}>
           <div><span className={s.eyebrow}>PAGE WORKSPACE</span><h1>صفحه‌هایت را یک‌جا مدیریت کن.</h1><p>صفحه بساز، از قالب شروع کن، نسخه پشتیبان بگیر و بدون اتصال به سرور خروجی آماده داشته باش.</p></div>
-          <div className={s.heroActions}><button type="button" className={s.primaryButton} onClick={createBlankPage}><Plus size={16} />صفحه خالی</button><button type="button" className={s.secondaryButton} onClick={exportWorkspace}><Download size={15} />پشتیبان workspace</button></div>
+          <div className={s.heroActions}><button type="button" className={s.primaryButton} onClick={createBlankPage}><Plus size={16} />صفحه خالی</button><button type="button" className={s.secondaryButton} onClick={exportWorkspace}><Download size={15} />پشتیبان workspace</button><button type="button" className={s.secondaryButton} onClick={exportStaticSite} disabled={!publishedCount || hasConflict}><Download size={15} />دانلود سایت استاتیک</button></div>
         </section>
 
         <section className={s.statsGrid} aria-label="آمار workspace"><div className={s.statCard}><span className={s.statIcon}>▦</span><span><strong>{pages.length.toLocaleString('fa-IR')}</strong><small>کل صفحات</small></span></div><div className={s.statCard}><span className={s.statIcon}>✓</span><span><strong>{publishedCount.toLocaleString('fa-IR')}</strong><small>منتشرشده محلی</small></span></div><div className={s.statCard}><span className={s.statIcon}>▧</span><span><strong>{state.assets.length.toLocaleString('fa-IR')}</strong><small>تصویر محلی</small></span></div><div className={s.statCard}><span className={s.statIcon}>◈</span><span><strong>{state.blocks.length.toLocaleString('fa-IR')}</strong><small>بلوک reusable</small></span></div></section>
