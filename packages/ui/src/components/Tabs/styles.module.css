@@ -1,0 +1,51 @@
+/* تب‌ها — flex wrap gap-4 (۱۶px) با border-b پایه؛ دکمه ۱۳px با pb-2 (۸px) */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid var(--dk-neutral-300);
+}
+
+.tab,
+.tabActive {
+  position: relative;
+  padding: 0 0 8px;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.7;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+/* غیرفعال: خاکستری mute با وزن ۵۰۰، هاور به ink */
+.tab {
+  color: var(--dk-ink-mute);
+  font-weight: 500;
+}
+.tab:hover {
+  color: var(--dk-ink);
+}
+
+/* فعال: ink بولد + میله ۲px قرمز (pseudo-element، inset-inline 0 و bottom -4px) */
+.tabActive {
+  color: var(--dk-ink);
+  font-weight: 700;
+}
+.tabActive::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--dk-primary-500);
+}
+
+.tab:focus-visible,
+.tabActive:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}

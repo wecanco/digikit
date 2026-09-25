@@ -1,0 +1,287 @@
+.reviewCard {
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--dk-border-subtle);
+}
+
+.productColumn {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.productMedia,
+.productPlaceholder,
+.tableThumb {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--dk-surface-subtle);
+  color: var(--dk-primary-600);
+}
+
+.productMedia {
+  width: 92px;
+  height: 78px;
+  border-radius: var(--dk-radius-sm);
+  text-decoration: none;
+}
+
+.productMedia > img,
+.productMedia > svg,
+.productMedia > span,
+.tableThumb > img,
+.tableThumb > svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productPlaceholder {
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+}
+
+.ratingBadge {
+  min-width: 24px;
+  padding: 2px 5px;
+  border-radius: var(--dk-radius-xs);
+  background: var(--dk-success);
+  color: #fff;
+  font-size: var(--dk-font-size-xs);
+  text-align: center;
+}
+
+.reviewBody {
+  display: grid;
+  flex: 1;
+  gap: 12px;
+  min-width: 0;
+}
+
+.reviewHeader,
+.statusRow,
+.reviewMeta,
+.reviewActions,
+.listHead,
+.listHead > div,
+.productCell,
+.tableActions {
+  display: flex;
+  align-items: center;
+}
+
+.reviewHeader,
+.listHead {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.reviewHeaderCopy {
+  min-width: 0;
+}
+
+.statusRow,
+.reviewActions,
+.reviewMeta,
+.tableActions {
+  gap: 8px;
+}
+
+.reviewHeader h3 {
+  margin: 8px 0 4px;
+  color: var(--dk-ink);
+  font-size: var(--dk-font-size-md);
+  line-height: 1.6;
+}
+
+.reviewMeta {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.comment {
+  margin: 0;
+  color: var(--dk-ink-soft);
+  line-height: var(--dk-line-normal);
+  white-space: pre-line;
+}
+
+.points {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--dk-font-size-sm);
+}
+
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.positive li {
+  color: var(--dk-success);
+}
+
+.negative li {
+  color: var(--dk-danger);
+}
+
+.positive li span,
+.negative li span {
+  color: var(--dk-ink-soft);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  padding: 4px 7px;
+  border-radius: var(--dk-radius-pill);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.pending {
+  background: var(--dk-warning-50);
+  color: var(--dk-warning);
+}
+
+.approved {
+  background: var(--dk-success-50);
+  color: var(--dk-success);
+}
+
+.rejected {
+  background: var(--dk-danger-50);
+  color: var(--dk-danger);
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.listHead > div {
+  align-items: baseline;
+  gap: 10px;
+}
+
+.listHead h2 {
+  margin: 0;
+  font-size: var(--dk-font-size-xl);
+}
+
+.listHead span {
+  color: var(--dk-info);
+  font-size: var(--dk-font-size-xs);
+}
+
+.listItems {
+  display: grid;
+}
+
+.loading {
+  padding: 32px;
+  border: 1px dashed var(--dk-border);
+  border-radius: var(--dk-radius-md);
+  color: var(--dk-ink-mute);
+  text-align: center;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface);
+}
+
+.tableWrap table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--dk-border-subtle);
+  text-align: start;
+  white-space: nowrap;
+}
+
+.tableWrap th {
+  background: var(--dk-surface-subtle);
+  color: var(--dk-ink-soft);
+  font-size: var(--dk-font-size-xs);
+  font-weight: 800;
+}
+
+.tableWrap td {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-sm);
+}
+
+.tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.productCell {
+  gap: 9px;
+  min-width: 220px;
+  color: var(--dk-ink-soft);
+}
+
+.tableThumb {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: var(--dk-radius-xs);
+}
+
+.empty {
+  padding: 32px !important;
+  color: var(--dk-ink-mute) !important;
+  text-align: center !important;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .reviewCard {
+    gap: 10px;
+  }
+
+  .productMedia {
+    width: 64px;
+    height: 56px;
+  }
+
+  .reviewHeader {
+    align-items: flex-start;
+  }
+
+  .listHead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

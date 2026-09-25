@@ -1,0 +1,73 @@
+/* نوار کمپین — bg-campaign-gradient در partials.js:46 (h-9 → lg:h-[60px]) */
+
+.strip {
+  background: var(--dk-campaign-gradient);
+}
+
+.inner {
+  max-width: 1650px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 36px; /* h-9 */
+  padding-inline: 40px; /* px-10 — جای خروج از زیر دکمه‌ها */
+}
+
+.message {
+  margin: 0;
+  min-width: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.strong {
+  font-weight: 800; /* font-extrabold */
+  color: #fff;
+}
+
+/* CTA فقط دسکتاپ — پیل با حاشیه سفید/۱۵ */
+.cta {
+  display: none;
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    justify-content: space-between;
+    min-height: 60px; /* lg:h-[60px] */
+    padding-inline: 16px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 5px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--dk-radius-pill);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .cta:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}

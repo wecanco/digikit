@@ -1,0 +1,38 @@
+{
+  "name": "@digikit/ui",
+  "version": "1.0.0",
+  "description": "سیستم طراحی React دیجی‌کیت — کامپوننت‌های RTL فروشگاهی، چک‌اوت و عملیات با TypeScript strict",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wecanco/digikit.git",
+    "directory": "packages/ui"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/tokens.css",
+    "./fonts.css": "./src/styles/fonts.css"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "lucide-react": "^1.47.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "react": "^19.2.0",
+    "typescript": "^5.9.0"
+  }
+}

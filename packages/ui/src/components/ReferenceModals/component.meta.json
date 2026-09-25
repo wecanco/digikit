@@ -1,0 +1,7 @@
+{
+  "components": {
+    "ConfirmDialog": { "label": "مودال تأیید عملیات", "group": "فرم و تعامل", "controls": [{ "key": "open", "label": "باز", "type": "boolean", "defaultValue": false }], "defaultProps": { "open": false, "title": "حذف کالا", "description": "آیا از حذف این مورد مطمئن هستید؟" } },
+    "FilterDialog": { "label": "مودال فیلتر مرجع", "group": "فرم و تعامل", "controls": [{ "key": "open", "label": "باز", "type": "boolean", "defaultValue": false }], "defaultProps": { "open": false, "children": "کنترل‌های فیلتر در این بخش قرار می‌گیرند." } },
+    "SearchDialog": { "label": "مودال جستجوی مرجع", "group": "فرم و تعامل", "controls": [{ "key": "open", "label": "باز", "type": "boolean", "defaultValue": false }], "defaultProps": { "open": false, "value": "گوشی", "results": [{ "id": "1", "label": "گوشی موبایل سامسونگ", "description": "۱۲۸ نتیجه" }, { "id": "2", "label": "قاب گوشی موبایل", "description": "۳۴ نتیجه" }] } }
+  }
+}

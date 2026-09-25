@@ -1,0 +1,47 @@
+/* پوسته صفحه — layout.js inject() */
+
+/* main — mx-auto w-full px-0 lg:px-4 (max-width از prop با inline style) */
+.main {
+  width: 100%;
+  margin-inline: auto;
+}
+@media (min-width: 1024px) {
+  .main {
+    padding-inline: 16px;
+  }
+}
+
+/* دکمه شناور «بازگشت به بالا» (amazing.html:19) —
+   fixed bottom-20 end-4 z-40 h-10 w-10 دایره سفید shadow-pop؛ lg:bottom-6 */
+.top {
+  position: fixed;
+  bottom: 80px; /* بالای نویگیشن پایین موبایل (~64px) */
+  inset-inline-end: 16px;
+  z-index: 40;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--dk-radius-pill);
+  background: #fff;
+  color: var(--dk-ink);
+  box-shadow: var(--dk-shadow-pop);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.top:hover {
+  color: var(--dk-primary-500);
+}
+@media (min-width: 1024px) {
+  .top {
+    bottom: 24px;
+  }
+}
+
+/* مخفی قبل از آستانه اسکرول — opacity-0 pointer-events-none در initScrollTop */
+.topHidden {
+  opacity: 0;
+  pointer-events: none;
+}

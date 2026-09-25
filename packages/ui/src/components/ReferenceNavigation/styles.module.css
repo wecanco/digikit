@@ -1,0 +1,233 @@
+.combobox,
+.upload,
+.pageContainer,
+.tableWrap {
+  min-width: 0;
+}
+
+.combobox {
+  position: relative;
+  display: grid;
+  gap: 7px;
+}
+
+.fieldLabel {
+  color: var(--dk-ink-soft);
+  font-size: var(--dk-font-size-sm);
+  font-weight: 700;
+}
+
+.comboboxControl {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.comboboxControl input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 42px 0 40px;
+  border: 1px solid var(--dk-border);
+  border-radius: var(--dk-radius-sm);
+  background: var(--dk-surface);
+  color: var(--dk-ink);
+  font: inherit;
+  outline: none;
+}
+
+.comboboxControl input:focus {
+  border-color: var(--dk-primary-400);
+  box-shadow: var(--dk-shadow-focus);
+}
+
+.comboboxControl button {
+  position: absolute;
+  inset-inline-start: 8px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: var(--dk-radius-sm);
+  background: transparent;
+  color: var(--dk-ink-mute);
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  inset-inline: 0;
+  top: calc(100% + 6px);
+  z-index: var(--dk-z-dropdown);
+  max-height: 260px;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface);
+  box-shadow: var(--dk-shadow-pop);
+  list-style: none;
+}
+
+.options li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--dk-radius-sm);
+  color: var(--dk-ink-soft);
+  cursor: pointer;
+  font-size: var(--dk-font-size-sm);
+}
+
+.options li:hover,
+.options li[aria-selected='true'],
+.options li[data-active='true'] {
+  background: var(--dk-primary-50);
+  color: var(--dk-primary-600);
+}
+
+.options small {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.optionDisabled {
+  opacity: .5;
+  cursor: not-allowed !important;
+}
+
+.noResults {
+  cursor: default !important;
+  color: var(--dk-ink-mute) !important;
+}
+
+.pageContainer {
+  display: grid;
+  gap: 18px;
+}
+
+.backLink,
+.arrowLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  color: var(--dk-primary-600);
+  font-size: var(--dk-font-size-sm);
+  text-decoration: none;
+}
+
+.pageTitle {
+  padding-block-end: 12px;
+  border-bottom: 1px solid var(--dk-border-subtle);
+}
+
+.pageTitle h1 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+}
+
+.pageBody {
+  min-width: 0;
+}
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface);
+  scrollbar-width: thin;
+}
+
+.tableWrap table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.tableWrap caption {
+  padding: 14px 16px;
+  color: var(--dk-ink-soft);
+  font-size: var(--dk-font-size-sm);
+  font-weight: 700;
+  text-align: start;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--dk-border-subtle);
+  color: var(--dk-ink-soft);
+  font-size: var(--dk-font-size-sm);
+  text-align: start;
+  white-space: nowrap;
+}
+
+.tableWrap th {
+  background: var(--dk-surface-subtle);
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.upload {
+  display: grid;
+  gap: 8px;
+}
+
+.uploadControl {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  overflow: hidden;
+  border: 1px dashed var(--dk-border);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface-subtle);
+  color: var(--dk-ink-mute);
+  cursor: pointer;
+}
+
+.uploadControl span {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.uploadControl input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uploadControl img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.removeUpload {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  padding: 5px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--dk-danger);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--dk-font-size-xs);
+}
+
+@media (max-width: 700px) {
+  .comboboxControl input {
+    min-height: 42px;
+  }
+}

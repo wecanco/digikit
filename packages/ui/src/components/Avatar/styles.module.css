@@ -1,0 +1,11 @@
+.avatar { position: relative; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; flex: 0 0 auto; border-radius: var(--dk-radius-pill); background: var(--dk-primary-100); color: var(--dk-primary-700); font-weight: 800; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.xs { width: 24px; height: 24px; font-size: 9px; }
+.sm { width: 32px; height: 32px; font-size: 11px; }
+.md { width: 40px; height: 40px; font-size: 13px; }
+.lg { width: 52px; height: 52px; font-size: 16px; }
+.xl { width: 72px; height: 72px; font-size: 21px; }
+.status { position: absolute; inset-inline-end: 0; bottom: 1px; width: 10px; height: 10px; border: 2px solid var(--dk-surface); border-radius: 50%; background: var(--dk-neutral-500); }
+.online { background: var(--dk-success); }
+.offline { background: var(--dk-neutral-500); }
+.busy { background: var(--dk-warning); }

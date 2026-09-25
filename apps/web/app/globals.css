@@ -1,0 +1,5 @@
+/* دموی وب — فقط تنظیمات مخصوص دمو؛ توکن‌ها از @digikit/ui/styles.css می‌آیند */
+
+html {
+  scrollbar-gutter: stable;
+}

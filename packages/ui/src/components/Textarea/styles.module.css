@@ -1,0 +1,4 @@
+.textarea { width: 100%; min-height: 112px; padding: 12px; border: 1px solid var(--dk-border); border-radius: var(--dk-radius-sm); background: var(--dk-surface); color: var(--dk-ink); font-size: var(--dk-font-size-md); line-height: var(--dk-line-normal); outline: none; transition: border-color var(--dk-transition-fast), box-shadow var(--dk-transition-fast); }
+.textarea:focus { border-color: var(--dk-primary-400); box-shadow: var(--dk-shadow-focus); }
+.textarea:disabled { cursor: not-allowed; background: var(--dk-neutral-100); }
+.invalid { border-color: var(--dk-danger); }.none { resize: none; }.vertical { resize: vertical; }.horizontal { resize: horizontal; }.both { resize: both; }

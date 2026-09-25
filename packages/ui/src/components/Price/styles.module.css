@@ -1,0 +1,48 @@
+/* قیمت — dir=ltr روی .wrap در index.tsx تا ترتیب ارقام لاتین درست بماند */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  line-height: 1.4;
+}
+
+.old {
+  color: var(--dk-ink-mute);
+  text-decoration: line-through;
+  font-size: 12px;
+  font-weight: 400;
+}
+.oldSm {
+  font-size: 11px;
+}
+.oldLg { font-size: 13px; }
+
+.now {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  color: var(--dk-ink);
+  font-size: 18px;
+  font-weight: 800;
+}
+.nowSm {
+  font-size: 14px;
+  font-weight: 700;
+}
+.nowLg { font-size: 24px; }
+
+.value {
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  color: var(--dk-ink-mute);
+  font-size: 11px;
+  font-weight: 500;
+}
+.unitSm {
+  font-size: 10px;
+}
+.unitLg { font-size: 13px; }

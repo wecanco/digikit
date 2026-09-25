@@ -1,0 +1,7 @@
+{
+  "components": {
+    "UserMenu": { "label": "منوی کاربر مرجع", "group": "ناوبری و پوسته", "defaultProps": { "name": "سارا احمدی", "profileHref": "/profile" } },
+    "AuthLinks": { "label": "لینک‌های احراز هویت", "group": "ناوبری و پوسته", "defaultProps": { "authenticated": false, "name": "سارا احمدی" } },
+    "MobileUserButton": { "label": "دکمه کاربر موبایل", "group": "ناوبری و پوسته", "defaultProps": { "href": "/profile" } }
+  }
+}

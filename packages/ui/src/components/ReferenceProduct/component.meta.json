@@ -1,0 +1,21 @@
+{
+  "components": {
+    "ProductDiscountTag": { "label": "نشان تخفیف محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "discount": 18 } },
+    "ProductPriceDisplay": { "label": "نمایش قیمت محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "price": 61990000, "discount": 8, "inStock": 12 } },
+    "ProductSpecialOffer": { "label": "نشان فروش ویژه محصول", "group": "تجارت و محصول", "defaultProps": { "discount": 8, "inStock": 12 } },
+    "ProductStockIndicator": { "label": "نشان موجودی محصول", "group": "تجارت و محصول", "defaultProps": { "inStock": 6 } },
+    "ProductOutOfStockMessage": { "label": "پیام ناموجودی محصول", "group": "تجارت و محصول" },
+    "ProductBreadcrumb": { "label": "مسیر محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "items": [{ "label": "خانه", "href": "/" }, { "label": "موبایل", "href": "/products" }, { "label": "گوشی موبایل" }] } },
+    "ProductDescription": { "label": "توضیحات محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "description": "این محصول با طراحی دقیق، عملکرد قابل اعتماد و ضمانت اصالت برای استفاده روزمره آماده شده است." } },
+    "ProductAttributesTable": { "label": "جدول ویژگی محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "rows": [{ "id": "memory", "label": "حافظه داخلی", "value": "۲۵۶ گیگابایت", "featured": true }, { "id": "warranty", "label": "گارانتی", "value": "۱۸ ماه شرکتی" }] } },
+    "ProductSpecificationList": { "label": "فهرست مشخصات محصول", "group": "تجارت و محصول", "defaultProps": { "specs": [{ "id": "screen", "label": "اندازه صفحه", "value": "۶٫۸ اینچ" }, { "id": "battery", "label": "ظرفیت باتری", "value": "۵۰۰۰ میلی‌آمپرساعت" }] } },
+    "ProductSubCategoriesList": { "label": "زیر‌دسته‌های محصول", "group": "تجارت و محصول", "defaultProps": { "items": [{ "label": "گوشی موبایل", "href": "/products" }, { "label": "لوازم جانبی", "href": "/products" }] } },
+    "ProductImageList": { "label": "فهرست تصاویر محصول", "group": "تجارت و محصول", "defaultProps": { "images": [{ "src": "ph:product-front", "alt": "نمای اصلی", "label": "نمای اصلی" }, { "src": "ph:product-side", "alt": "نمای کناری", "label": "نمای کناری" }] } },
+    "ProductSort": { "label": "مرتب‌سازی محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "value": "popular", "options": [{ "value": "popular", "label": "پرفروش‌ترین" }, { "value": "newest", "label": "جدیدترین" }] } },
+    "ProductFilterControls": { "label": "فیلترهای محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "inStock": true, "discountOnly": false } },
+    "ProductColorSelector": { "label": "انتخاب رنگ محصول", "group": "تجارت و محصول", "defaultProps": { "colors": [{ "id": "black", "name": "مشکی", "color": "#202124" }, { "id": "blue", "name": "آبی", "color": "#2563eb" }], "value": "black" } },
+    "ProductSizeSelector": { "label": "انتخاب اندازه محصول", "group": "تجارت و محصول", "defaultProps": { "sizes": ["۲۵۶ گیگابایت", "۵۱۲ گیگابایت"], "value": "۲۵۶ گیگابایت" } },
+    "ProductCard": { "label": "کارت محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "product": { "id": 1, "title": "گوشی موبایل سامسونگ مدل Galaxy S24 Ultra", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "oldPrice": 67380000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:product-card", "stock": 12 } } },
+    "ProductCardWithActions": { "label": "کارت محصول با عملیات", "group": "تجارت و محصول", "defaultProps": { "product": { "id": 2, "title": "لپ‌تاپ ایسوس مدل VivoBook", "brand": "ایسوس", "cat": "laptop", "price": 42990000, "oldPrice": 45990000, "discount": 6, "rating": 4.4, "ratingCount": 872, "image": "ph:product-card-2", "stock": 7 } } }
+  }
+}

@@ -1,0 +1,131 @@
+/* مگامنو — پنل absolute زیر ردیف ۲ هدر: w-850, p-4, rounded-b-2xl, shadow-pop */
+
+.panel {
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  z-index: 50;
+  width: 850px;
+  display: grid;
+  grid-template-columns: 268px 1fr;
+  gap: 20px;
+  padding: 16px;
+  background: #fff;
+  border-end-start-radius: 16px; /* rounded-b-2xl */
+  border-end-end-radius: 16px;
+  box-shadow: var(--dk-shadow-pop);
+}
+
+/* ستون آغازین — فهرست دسته‌ها با کاشی آیکون ۴۰px */
+.cats {
+  min-width: 0;
+}
+
+.catsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 6px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.cat:hover,
+.catActive {
+  background: var(--dk-neutral-100);
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.tileIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.catTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dk-ink-soft);
+  transition: color 0.15s ease;
+}
+
+.chev {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  color: var(--dk-ink-faint);
+  transition: color 0.15s ease;
+}
+
+.cat:hover .catTitle,
+.catActive .catTitle,
+.cat:hover .chev,
+.catActive .chev {
+  color: var(--dk-primary-500);
+}
+
+.cat:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}
+
+/* ستون پایانی — زیردسته‌های دستهٔ hover شده */
+.subs {
+  min-width: 0;
+}
+
+.all {
+  display: block;
+  margin-block-end: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--dk-primary-500);
+  text-decoration: none;
+}
+
+.all:hover {
+  text-decoration: underline;
+}
+
+.subsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 20px;
+}
+
+.sub {
+  display: block;
+  padding-block: 4px;
+  font-size: 13px;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.sub:hover {
+  color: var(--dk-primary-500);
+}
+
+.sub:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}

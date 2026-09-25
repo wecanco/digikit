@@ -1,0 +1,172 @@
+/* دیجی‌کیت UI kit — semantic design tokens.
+   Consumers only need to import @digikit/ui/styles.css once. */
+
+:root {
+  color-scheme: light;
+  --dk-primary-50: #fff1f3;
+  --dk-primary-100: #ffe0e5;
+  --dk-primary-200: #ffc5ce;
+  --dk-primary-300: #ff9cab;
+  --dk-primary-400: #f9687b;
+  --dk-primary-500: #ef394e;
+  --dk-primary-600: #dc243e;
+  --dk-primary-700: #b91c35;
+  --dk-primary-800: #981a35;
+  --dk-primary-900: #74162e;
+
+  --dk-amazing-from: #d72e4e;
+  --dk-amazing-to: #ec374e;
+  --dk-amazing-gradient: linear-gradient(110deg, #d72e4e 0%, #ec374e 100%);
+  --dk-campaign-from: #e61302;
+  --dk-campaign-mid: #f04611;
+  --dk-campaign-to: #eb1f09;
+  --dk-campaign-gradient: linear-gradient(110deg, #e61302 0%, #f04611 55%, #eb1f09 100%);
+
+  --dk-cream: #fff9e5;
+  --dk-success: #00a049;
+  --dk-success-50: #e8f8ef;
+  --dk-success-100: #ccefdd;
+  --dk-info: #2563eb;
+  --dk-info-50: #eff6ff;
+  --dk-warning: #d97706;
+  --dk-warning-50: #fff7e8;
+  --dk-danger: #dc2626;
+  --dk-danger-50: #fef2f2;
+  --dk-star: #f5b83d;
+
+  --dk-ink: #202124;
+  --dk-ink-soft: #424750;
+  --dk-ink-mute: #70757d;
+  --dk-ink-faint: #9da1a7;
+  --dk-neutral-50: #fcfcfd;
+  --dk-neutral-100: #f8f9fa;
+  --dk-neutral-200: #f3f4f6;
+  --dk-neutral-300: #eef0f2;
+  --dk-neutral-400: #e1e3e6;
+  --dk-neutral-500: #c7cbd1;
+  --dk-neutral-600: #a1a6ad;
+  --dk-neutral-700: #6b7280;
+  --dk-neutral-800: #454a54;
+  --dk-neutral-900: #202124;
+  --dk-page: #f7f8fa;
+  --dk-card: #ffffff;
+
+  --dk-bg: var(--dk-page);
+  --dk-surface: var(--dk-card);
+  --dk-surface-subtle: var(--dk-neutral-100);
+  --dk-border: var(--dk-neutral-400);
+  --dk-border-subtle: var(--dk-neutral-300);
+  --dk-text: var(--dk-ink);
+  --dk-text-muted: var(--dk-ink-mute);
+  --dk-text-inverse: #ffffff;
+  --dk-focus: #2563eb;
+
+  --dk-space-1: 4px;
+  --dk-space-2: 8px;
+  --dk-space-3: 12px;
+  --dk-space-4: 16px;
+  --dk-space-5: 20px;
+  --dk-space-6: 24px;
+  --dk-space-8: 32px;
+  --dk-space-10: 40px;
+  --dk-space-12: 48px;
+  --dk-space-16: 64px;
+
+  --dk-radius-xs: 6px;
+  --dk-radius-sm: 8px;
+  --dk-radius-md: 12px;
+  --dk-radius-lg: 16px;
+  --dk-radius-xl: 20px;
+  --dk-radius-card: var(--dk-radius-md);
+  --dk-radius-pill: 9999px;
+
+  --dk-shadow-xs: 0 1px 2px rgba(32, 33, 36, 0.04);
+  --dk-shadow-card: 0 1px 3px rgba(32, 33, 36, 0.06), 0 4px 14px rgba(32, 33, 36, 0.03);
+  --dk-shadow-panel: 0 8px 28px rgba(32, 33, 36, 0.1);
+  --dk-shadow-pop: 0 18px 48px rgba(32, 33, 36, 0.16);
+  --dk-shadow-focus: 0 0 0 3px color-mix(in srgb, var(--dk-focus) 18%, transparent);
+
+  --dk-font-family: 'Vazir', 'Segoe UI', Tahoma, sans-serif;
+  --dk-font-size-xs: 11px;
+  --dk-font-size-sm: 13px;
+  --dk-font-size-md: 14px;
+  --dk-font-size-lg: 16px;
+  --dk-font-size-xl: 20px;
+  --dk-font-size-2xl: 28px;
+  --dk-line-tight: 1.35;
+  --dk-line-normal: 1.7;
+
+  --dk-z-dropdown: 40;
+  --dk-z-sticky: 50;
+  --dk-z-overlay: 80;
+  --dk-z-toast: 100;
+  --dk-transition-fast: 140ms ease;
+  --dk-transition-normal: 220ms ease;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --dk-page: #101114;
+  --dk-bg: #101114;
+  --dk-card: #191b20;
+  --dk-surface: #191b20;
+  --dk-surface-subtle: #22252b;
+  --dk-border: #383c44;
+  --dk-border-subtle: #2b2e35;
+  --dk-ink: #f7f7f8;
+  --dk-ink-soft: #d8dbe0;
+  --dk-ink-mute: #a4a9b2;
+  --dk-ink-faint: #777d87;
+  --dk-text: var(--dk-ink);
+  --dk-text-muted: var(--dk-ink-mute);
+  --dk-neutral-100: #22252b;
+  --dk-neutral-200: #292c33;
+  --dk-neutral-300: #30343c;
+  --dk-neutral-400: #383c44;
+  --dk-neutral-500: #515761;
+  --dk-neutral-700: #a4a9b2;
+  --dk-neutral-800: #d8dbe0;
+  --dk-neutral-900: #f7f7f8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.dk-root,
+[dir='rtl'] .dk-scope {
+  font-family: var(--dk-font-family);
+}
+
+body.dk-root {
+  margin: 0;
+  background: var(--dk-page);
+  color: var(--dk-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dk-root button,
+.dk-root input,
+.dk-root select,
+.dk-root textarea {
+  font: inherit;
+}
+
+.dk-root :focus-visible {
+  outline: 3px solid var(--dk-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

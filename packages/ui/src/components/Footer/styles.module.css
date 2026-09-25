@@ -1,0 +1,408 @@
+/* ─── فوتر — پورت هندسه footerHTML (partials.js 233-326) ───
+   کلاس‌های سورس کنار هر بلوک ثبت شده؛ lg = 1024px، md = 768px، sm = 640px */
+
+.footer {
+  /* mt-8 border-t border-neutral-400 bg-white */
+  margin-block-start: 32px;
+  border-block-start: 1px solid var(--dk-neutral-400);
+  background: var(--dk-card);
+}
+
+/* mx-auto max-w-[1352px] px-4 */
+.container {
+  max-width: 1352px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ── نوار خدمات: grid grid-cols-2 gap-y-5 border-b border-neutral-300 py-6 sm:grid-cols-3 md:grid-cols-5 ── */
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 20px;
+  padding-block: 24px;
+  border-block-end: 1px solid var(--dk-neutral-300);
+}
+@media (min-width: 640px) {
+  .services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 768px) {
+  .services {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* flex items-start gap-2.5 */
+.service {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+/* shrink-0 text-ink-soft + h-10 w-10 روی آیکون */
+.serviceIcon {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--dk-ink-soft);
+}
+/* flex flex-col pt-1 */
+.serviceTexts {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 4px;
+}
+/* text-[11px] font-bold leading-4 text-ink-soft */
+.serviceL1 {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--dk-ink-soft);
+}
+/* mt-1 text-[10px] leading-4 text-ink-faint */
+.serviceL2 {
+  margin-block-start: 4px;
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--dk-ink-faint);
+}
+
+/* ── ستون‌های لینک + خبرنامه: grid grid-cols-2 gap-x-6 gap-y-8 py-8 md:grid-cols-4 ── */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 32px;
+  padding-block: 32px;
+}
+@media (min-width: 768px) {
+  .cols {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* mb-4 text-sm font-extrabold text-ink */
+.colTitle {
+  margin-block-end: 16px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--dk-ink);
+}
+/* flex flex-col gap-3 */
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* link-plain text-xs → text-ink-soft hover:text-primary-500 */
+.colLink {
+  font-size: 12px;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.colLink:hover {
+  color: var(--dk-primary-500);
+}
+
+/* خبرنامه: input-base !rounded-e-none text-xs + دکمه bg-ink !rounded-s-none */
+.newsForm {
+  display: flex;
+}
+.newsInput {
+  width: 100%;
+  border: 1px solid var(--dk-neutral-400);
+  border-start-start-radius: 8px;
+  border-end-start-radius: 8px;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+  background: var(--dk-card);
+  padding: 10px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--dk-ink);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.newsInput::placeholder {
+  color: var(--dk-ink-faint);
+}
+.newsInput:focus {
+  border-color: var(--dk-primary-400);
+  box-shadow: 0 0 0 2px var(--dk-primary-100);
+}
+.newsBtn {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-start-end-radius: 8px;
+  border-end-end-radius: 8px;
+  background: var(--dk-ink);
+  padding: 10px 16px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.newsBtn:hover {
+  background: var(--dk-ink-soft);
+}
+/* معادل توست «ایمیل شما ثبت شد» دموی وانیلا — اینجا درون‌خطی */
+.newsSuccess {
+  margin-block-start: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dk-success);
+}
+
+/* mt-5 flex items-center gap-2 */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-block-start: 20px;
+}
+/* h-9 w-9 rounded-lg border border-neutral-400 text-ink-mute hover:border-primary-400 hover:text-primary-500 */
+.socialLink {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dk-neutral-400);
+  border-radius: 8px;
+  color: var(--dk-ink-mute);
+  transition: border-color 0.15s, color 0.15s;
+}
+.socialLink:hover {
+  border-color: var(--dk-primary-400);
+  color: var(--dk-primary-500);
+}
+
+/* ── نوار سرمه‌ای اپ: rounded-xl bg-ink px-6 py-5 + md:flex-row md:items-center ── */
+.appBar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: var(--dk-radius-card);
+  background: var(--dk-ink);
+  padding: 20px 24px;
+}
+@media (min-width: 768px) {
+  .appBar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/* flex items-center gap-3.5 */
+.appLead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* h-12 w-12 rounded-xl bg-primary-500 text-white */
+.appIconTile {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--dk-primary-500);
+  color: #fff;
+}
+/* text-sm font-extrabold text-white */
+.appTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+}
+/* mt-1 text-[11px] text-white/60 */
+.appSub {
+  margin-block-start: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* flex flex-wrap items-center gap-2 */
+.appBadges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+/* h-10 rounded-lg border border-white/25 px-3.5 text-[11px] font-bold text-white hover:bg-white/10 */
+.appBadge {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding-inline: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.appBadge:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* نشان «…»: px-3 text-[13px] */
+.appBadgeMore {
+  padding-inline: 12px;
+  font-size: 13px;
+}
+
+/* ── بلوک درباره + نشان‌ها: border-t border-neutral-100 py-7 + lg:flex-row lg:items-start lg:justify-between ── */
+.trustBand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 28px;
+  border-block-start: 1px solid var(--dk-neutral-100);
+}
+@media (min-width: 1024px) {
+  .trustBand {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+/* max-w-3xl */
+.about {
+  max-width: 768px;
+}
+/* text-sm font-extrabold text-ink */
+.aboutTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--dk-ink);
+}
+/* mt-3 text-justify text-[11px] leading-6 text-ink-mute */
+.aboutText {
+  margin-block-start: 12px;
+  text-align: justify;
+  font-size: 11px;
+  line-height: 24px;
+  color: var(--dk-ink-mute);
+}
+/* mt-2.5 inline-block text-[11px] font-bold text-sky-600 hover:text-sky-700 — آبی لینک بیرونی مرجع (توکن آبی در پالت نیست) */
+.aboutMore {
+  display: inline-block;
+  margin-block-start: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.aboutMore:hover {
+  color: #0369a1;
+}
+/* flex flex-wrap items-start gap-3 */
+.seals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+/* h-[88px] w-[72px] flex-col items-center justify-center gap-1.5 rounded-lg border border-neutral-300 bg-white px-1 text-center */
+.seal {
+  display: flex;
+  height: 88px;
+  width: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--dk-neutral-300);
+  border-radius: 8px;
+  background: var(--dk-card);
+  padding-inline: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+/* text-ink-faint + h-8 w-8 روی آیکون سپر */
+.sealIcon {
+  display: flex;
+  color: var(--dk-ink-faint);
+}
+/* text-[9px] leading-3 text-ink-mute */
+.sealLabel {
+  font-size: 9px;
+  line-height: 12px;
+  color: var(--dk-ink-mute);
+}
+
+/* ── باند زیرنام‌ها: rounded-xl bg-neutral-100 py-4 + grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 ── */
+.brandBand {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 12px;
+  border-radius: var(--dk-radius-card);
+  background: var(--dk-neutral-100);
+  padding-block: 16px;
+}
+@media (min-width: 640px) {
+  .brandBand {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .brandBand {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+}
+/* border-e border-neutral-300 px-2 text-[11px] font-bold text-ink-mute hover:text-primary-500 */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-inline-end: 1px solid var(--dk-neutral-300);
+  padding-inline: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dk-ink-mute);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.brand:hover {
+  color: var(--dk-primary-500);
+}
+/* lg:last:border-e-0 */
+@media (min-width: 1024px) {
+  .brand:last-child {
+    border-inline-end: none;
+  }
+}
+
+/* ── نوار پایانی: border-t border-neutral-100 + کپی‌رایت وسط‌چین ── */
+.bottomBar {
+  border-block-start: 1px solid var(--dk-neutral-100);
+}
+/* mx-auto flex max-w-[1352px] items-center justify-center px-4 py-4 */
+.bottomInner {
+  display: flex;
+  max-width: 1352px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+/* text-center text-[11px] leading-5 text-ink-faint */
+.copyright {
+  text-align: center;
+  font-size: 11px;
+  line-height: 20px;
+  color: var(--dk-ink-faint);
+}

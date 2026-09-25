@@ -1,0 +1,7 @@
+{
+  "components": {
+    "OrderCard": { "label": "کارت سفارش مرجع", "group": "عملیات و وضعیت", "defaultProps": { "order": { "id": "۱۲۳۴۵", "status": "processing", "total": 61990000, "date": "۱۴۰۵/۰۶/۲۴", "customer": "سارا احمدی", "items": [{ "id": "phone", "title": "گوشی موبایل", "image": "ph:order-phone", "quantity": 1 }, { "id": "case", "title": "قاب موبایل", "image": "ph:order-case", "quantity": 2 }] } } },
+    "OrdersTable": { "label": "جدول سفارش‌ها مرجع", "group": "عملیات و وضعیت", "defaultProps": { "orders": [{ "id": "۱۲۳۴۵", "status": "delivered", "total": 61990000, "date": "۱۴۰۵/۰۶/۲۴", "customer": "سارا احمدی", "items": [{ "id": "phone", "title": "گوشی موبایل", "image": "ph:order-phone" }] }, { "id": "۱۲۳۴۶", "status": "processing", "total": 9490000, "date": "۱۴۰۵/۰۶/۲۳", "customer": "مهدی رضایی", "items": [{ "id": "headphone", "title": "هدفون", "image": "ph:order-headphone" }] }] } },
+    "OrdersSummary": { "label": "خلاصه سفارش‌ها", "group": "عملیات و وضعیت", "defaultProps": { "pending": 3, "delivered": 12, "total": 15 } }
+  }
+}

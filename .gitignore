@@ -1,0 +1,12 @@
+node_modules/
+apps/web/.next/
+dist/
+coverage/
+.artifacts/
+*.tsbuildinfo
+*.log
+.DS_Store
+.env
+.env.*
+!**/.env.example
+*.tgz

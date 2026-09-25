@@ -1,0 +1,101 @@
+/* دکمه — مترجم‌شده ۱:۱ از btn-* در main.css دموی Vite */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: var(--dk-radius-sm);
+  padding: 0 16px;
+  font-size: var(--dk-font-size-md);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--dk-transition-fast), border-color var(--dk-transition-fast), color var(--dk-transition-fast), box-shadow var(--dk-transition-fast), transform var(--dk-transition-fast), opacity var(--dk-transition-fast);
+  white-space: nowrap;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  background: var(--dk-neutral-300);
+  color: var(--dk-neutral-500);
+}
+.btn:focus-visible {
+  box-shadow: var(--dk-shadow-focus);
+}
+
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+
+.sm { min-height: 32px; padding-inline: 12px; font-size: var(--dk-font-size-sm); }
+.md { min-height: 40px; }
+.lg { min-height: 48px; padding-inline: 20px; font-size: var(--dk-font-size-lg); }
+.fullWidth { width: 100%; }
+
+.primary {
+  background: var(--dk-primary-500);
+  color: #fff;
+}
+
+.secondary {
+  background: var(--dk-neutral-200);
+  color: var(--dk-ink-soft);
+}
+.secondary:hover:not(:disabled) { background: var(--dk-neutral-300); }
+.primary:hover:not(:disabled) {
+  background: var(--dk-primary-600);
+}
+
+.outline {
+  background: #fff;
+  color: var(--dk-primary-500);
+  border-color: var(--dk-primary-500);
+}
+.outline:hover:not(:disabled) {
+  background: var(--dk-primary-50);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--dk-ink-soft);
+  padding: 8px 12px;
+  font-weight: 600;
+}
+.ghost:hover {
+  background: var(--dk-neutral-100);
+}
+
+.danger { background: var(--dk-danger); color: #fff; }
+.danger:hover:not(:disabled) { background: #b91c1c; }
+
+.amazing {
+  background: var(--dk-amazing-gradient);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: var(--dk-shadow-pop);
+}
+.amazing:hover {
+  opacity: 0.95;
+}
+
+.white {
+  background: #fff;
+  color: var(--dk-primary-600);
+}
+
+.loading { cursor: wait; }
+.loader {
+  width: 15px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--dk-radius-pill);
+  animation: buttonSpin 0.7s linear infinite;
+}
+
+.pill {
+  border-radius: var(--dk-radius-pill);
+}
+
+@keyframes buttonSpin { to { transform: rotate(360deg); } }

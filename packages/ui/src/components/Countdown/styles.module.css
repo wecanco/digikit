@@ -1,0 +1,37 @@
+/* شمارش‌معکوس — ارقام لاتین درشت هم‌عرض؛ سطر ltr */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  direction: ltr;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* onRed: سه جعبه شیشه‌ای (سفید ۲۰٪) روی باند قرمز */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* heroWhite / white: ارقام لخت سفید بدون جعبه */
+.bare {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sep {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}

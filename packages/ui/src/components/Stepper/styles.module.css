@@ -1,0 +1,39 @@
+/* استپر — مثل نسخه وانیلا (inline-flex + حاشیه neutral-400) ولی با گرد کامل (پیل) و آیکون به‌جای نویسه‌های +/− */
+
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--dk-neutral-400);
+  border-radius: var(--dk-radius-pill);
+  background: #fff;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; /* h-8 w-8 */
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--dk-ink-soft);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.btn:hover:not(:disabled) {
+  color: var(--dk-primary-500);
+}
+.btn:disabled {
+  color: var(--dk-ink-faint);
+  cursor: not-allowed;
+}
+
+.val {
+  width: 32px; /* w-8 */
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dk-ink);
+  font-variant-numeric: tabular-nums;
+}

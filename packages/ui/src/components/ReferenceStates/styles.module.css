@@ -1,0 +1,22 @@
+.dataState {
+  min-width: 0;
+}
+
+.inlineLoading {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-sm);
+}
+
+.fullLoading {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 24px;
+}
+
+.fullLoading > div {
+  min-width: min(100%, 280px);
+}

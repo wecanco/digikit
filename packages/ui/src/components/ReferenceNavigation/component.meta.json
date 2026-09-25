@@ -1,0 +1,9 @@
+{
+  "components": {
+    "Combobox": { "label": "کمبوباکس مرجع", "group": "فرم و تعامل", "defaultProps": { "label": "انتخاب برند", "options": [{ "id": "samsung", "label": "سامسونگ", "meta": "۱۲۸ کالا" }, { "id": "apple", "label": "اپل", "meta": "۸۴ کالا" }] } },
+    "PageContainer": { "label": "کانتینر صفحه مرجع", "group": "ناوبری و پوسته", "defaultProps": { "title": "مدیریت محصولات", "children": "محتوای صفحه در این بخش قرار می‌گیرد.", "backHref": "/products" } },
+    "TableContainer": { "label": "کانتینر جدول مرجع", "group": "ناوبری و پوسته", "defaultProps": { "headers": ["شناسه", "نام", "وضعیت"], "children": "ردیف نمونه" } },
+    "UploadImage": { "label": "آپلود تصویر مرجع", "group": "فرم و تعامل", "defaultProps": { "label": "تصویر محصول" } },
+    "ArrowLink": { "label": "لینک پیکانی مرجع", "group": "ناوبری و پوسته", "defaultProps": { "children": "مشاهده همه", "href": "/products" } }
+  }
+}

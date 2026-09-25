@@ -1,0 +1,14 @@
+.button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 1px solid transparent; border-radius: var(--dk-radius-sm); cursor: pointer; transition: background-color var(--dk-transition-fast), color var(--dk-transition-fast), border-color var(--dk-transition-fast), transform var(--dk-transition-fast); }
+.button:hover:not(:disabled) { transform: translateY(-1px); }
+.button:disabled { cursor: not-allowed; opacity: .45; }
+.sm { width: 32px; height: 32px; }
+.md { width: 40px; height: 40px; }
+.lg { width: 48px; height: 48px; }
+.neutral { background: var(--dk-surface); border-color: var(--dk-border); color: var(--dk-ink-soft); }
+.neutral:hover:not(:disabled) { border-color: var(--dk-primary-300); color: var(--dk-primary-600); }
+.primary { background: var(--dk-primary-500); color: #fff; }
+.primary:hover:not(:disabled) { background: var(--dk-primary-600); }
+.ghost { background: transparent; color: var(--dk-ink-mute); }
+.ghost:hover:not(:disabled) { background: var(--dk-neutral-100); color: var(--dk-ink); }
+.danger { background: var(--dk-danger-50); color: var(--dk-danger); }
+.danger:hover:not(:disabled) { background: var(--dk-danger); color: #fff; }

@@ -1,0 +1,92 @@
+/* کارت گرید محصول — پورت وفادار productCardGrid از ui.js:54-67 */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px;
+  background: var(--dk-card);
+  border-radius: var(--dk-radius-card);
+  box-shadow: var(--dk-shadow-card);
+  transition: box-shadow 150ms ease;
+}
+
+.card:not(.bare):hover {
+  box-shadow: var(--dk-shadow-panel);
+}
+
+/* حالت hairline: بدون پنل/شعاع/سایه — پدینگ p-2 مثل مرجع می‌ماند */
+.bare {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ── تصویر ── */
+.imgLink {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+/* دایره تخفیف — بالا، سمت پایان درون‌خطی (end-1.5 مثل مرجع) */
+.badge {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-end: 6px;
+  z-index: 1;
+  display: flex;
+}
+
+.img {
+  box-sizing: border-box;
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 210px;
+  margin-inline: auto;
+  object-fit: contain;
+  padding: 8px;
+  transition: transform 150ms ease;
+}
+
+.card:hover .img {
+  transform: scale(1.03);
+}
+
+/* ── عنوان: ۲خطی، فقط از 768px به بالا (hidden md:block در مرجع) ── */
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-block-start: 4px;
+  padding-inline: 4px;
+  min-height: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--dk-ink);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.title:hover {
+  color: var(--dk-primary-500);
+}
+
+@media (max-width: 767.98px) {
+  .title {
+    display: none;
+  }
+}
+
+/* ── قیمت: px-1 pb-1 pt-2؛ با عنوان → چسبیده به پایین (mt-auto) ── */
+.price,
+.pricePinned {
+  padding: 8px 4px 4px;
+}
+
+.pricePinned {
+  margin-block-start: auto;
+}

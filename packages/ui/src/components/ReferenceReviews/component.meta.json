@@ -1,0 +1,9 @@
+{
+  "components": {
+    "ReviewStatusBadge": { "label": "نشان وضعیت دیدگاه", "group": "عملیات و وضعیت", "defaultProps": { "status": "pending" } },
+    "ReviewCard": { "label": "کارت دیدگاه مرجع", "group": "عملیات و وضعیت", "defaultProps": { "review": { "id": "rev-1", "title": "تجربه خوب از محصول", "rating": 5, "comment": "کیفیت ساخت و سرعت ارسال رضایت‌بخش بود.", "status": "approved", "date": "۱۴۰۵/۰۶/۲۴", "userName": "سارا احمدی", "product": { "title": "گوشی موبایل سامسونگ", "image": "ph:review-product" }, "positivePoints": [{ "id": "p1", "title": "کیفیت ساخت بالا" }], "negativePoints": [{ "id": "n1", "title": "قیمت کمی بالا است" }] } } },
+    "ReviewProductCard": { "label": "دیدگاه صفحه محصول", "group": "عملیات و وضعیت", "defaultProps": { "review": { "id": "rev-2", "title": "ارزش خرید دارد", "rating": 4, "comment": "برای استفاده روزمره انتخاب خوبی است.", "status": "approved", "date": "۱۴۰۵/۰۶/۲۲", "userName": "مهدی رضایی" } } },
+    "ReviewsList": { "label": "فهرست دیدگاه‌ها مرجع", "group": "عملیات و وضعیت", "defaultProps": { "reviews": [{ "id": "rev-1", "title": "تجربه خوب از محصول", "rating": 5, "comment": "کیفیت ساخت رضایت‌بخش بود.", "status": "approved", "date": "۱۴۰۵/۰۶/۲۴", "userName": "سارا احمدی" }], "count": 128 } },
+    "ReviewsTable": { "label": "جدول دیدگاه‌ها مرجع", "group": "عملیات و وضعیت", "defaultProps": { "reviews": [{ "id": "rev-1", "title": "تجربه خوب", "rating": 5, "comment": "رضایت‌بخش بود.", "status": "approved", "userName": "سارا احمدی", "product": { "title": "گوشی سامسونگ", "image": "ph:review-table" } }, { "id": "rev-2", "title": "قابل قبول", "rating": 3, "comment": "متوسط بود.", "status": "pending", "userName": "مهدی رضایی", "product": { "title": "هدفون بی‌سیم", "image": "ph:review-table-2" } }] } }
+  }
+}

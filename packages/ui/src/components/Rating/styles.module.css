@@ -1,0 +1,39 @@
+/* امتیاز — پورت ۱:۱ از ratingHTML (ui.js:32-53)
+   ستاره‌ها h-3.5/w-3.5 = 14px، پر رنگ --dk-star، خالی --dk-neutral-500 (هر دو fill) */
+
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* gap-1 */
+  font-size: 12px; /* text-xs */
+  line-height: 1.5;
+  color: var(--dk-ink-mute);
+}
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px; /* gap-0.5 */
+}
+
+.star {
+  color: var(--dk-star);
+}
+.starOff {
+  color: var(--dk-neutral-500);
+}
+
+.count {
+  color: var(--dk-ink-mute);
+}
+
+/* حالت single (PLP): یک ستاره + نمره ۱۱px medium رنگ ink-soft + تعداد ink-mute */
+.score {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--dk-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.single .count {
+  font-size: 11px;
+}

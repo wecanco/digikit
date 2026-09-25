@@ -1,0 +1,36 @@
+/* وزیر با اعداد فارسی (OFL، باندل‌شده) — ایمپورت '@digikit/ui/fonts.css' */
+@font-face {
+  font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Vazir-FD-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/Vazir-FD-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/Vazir-FD-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Vazir-FD-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazir';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./fonts/Vazir-FD-ExtraBold.woff2') format('woff2');
+}

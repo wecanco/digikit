@@ -1,0 +1,246 @@
+.orderCard {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface);
+}
+
+.cardButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+}
+
+.cardButton .orderCard {
+  cursor: pointer;
+  transition: border-color var(--dk-transition-fast), box-shadow var(--dk-transition-fast);
+}
+
+.cardButton:hover .orderCard {
+  border-color: var(--dk-primary-200);
+  box-shadow: var(--dk-shadow-card);
+}
+
+.cardHead,
+.statusLine,
+.cardActions,
+.orderMeta,
+.itemLink,
+.summaryItem {
+  display: flex;
+  align-items: center;
+}
+
+.cardHead,
+.orderMeta {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.statusLine,
+.cardActions {
+  gap: 8px;
+}
+
+.date,
+.orderMeta,
+.tableWrap td,
+.tableWrap th {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.orderMeta strong {
+  margin-inline-start: 4px;
+  color: var(--dk-ink);
+  font-weight: 700;
+}
+
+.itemList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--dk-border-subtle);
+}
+
+.itemLink {
+  position: relative;
+  gap: 4px;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+}
+
+.itemLink small {
+  position: absolute;
+  inset-block-end: -5px;
+  inset-inline-start: -5px;
+  min-width: 16px;
+  padding: 1px 4px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-primary-500);
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.itemMedia,
+.tableThumb,
+.itemPlaceholder {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--dk-surface-subtle);
+  color: var(--dk-primary-600);
+}
+
+.itemMedia {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--dk-radius-sm);
+}
+
+.itemMedia > img,
+.itemMedia > svg,
+.itemMedia > span,
+.tableThumb > img,
+.tableThumb > svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.itemPlaceholder {
+  font-size: var(--dk-font-size-lg);
+  font-weight: 800;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+  background: var(--dk-surface);
+}
+
+.tableWrap table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--dk-border-subtle);
+  text-align: start;
+  white-space: nowrap;
+}
+
+.tableWrap th {
+  background: var(--dk-surface-subtle);
+  color: var(--dk-ink-soft);
+  font-weight: 800;
+}
+
+.tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.orderCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--dk-ink);
+  cursor: pointer;
+  font: inherit;
+}
+
+.orderCell:hover {
+  color: var(--dk-primary-600);
+}
+
+.tableThumb {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--dk-radius-xs);
+}
+
+.empty {
+  padding: 32px !important;
+  color: var(--dk-ink-mute);
+  text-align: center !important;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.summaryItem {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  padding: 18px 12px;
+  background: var(--dk-surface);
+}
+
+.summaryItem > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-primary-50);
+  color: var(--dk-primary-600);
+}
+
+.summaryItem strong {
+  color: var(--dk-ink);
+  font-size: var(--dk-font-size-xl);
+}
+
+.summaryItem small {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .orderCard {
+    padding: 12px;
+  }
+
+  .orderMeta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summaryItem {
+    padding-inline: 6px;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "components": {
+    "ReferenceCartItem": { "label": "آیتم سبد مرجع", "group": "سبد و پرداخت", "defaultProps": { "item": { "qty": 2, "selectedColor": "#202124", "selectedVariant": "۲۵۶ گیگابایت", "product": { "id": 1, "title": "گوشی موبایل سامسونگ مدل Galaxy S24 Ultra", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "oldPrice": 67380000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:cart-phone", "stock": 12 } } } },
+    "CartPreview": { "label": "پیش‌نمایش سبد مرجع", "group": "سبد و پرداخت", "defaultProps": { "items": [{ "qty": 1, "product": { "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:cart-phone", "stock": 12 } }, { "qty": 2, "product": { "id": 2, "title": "هدفون بی‌سیم", "brand": "شیائومی", "cat": "audio", "price": 2490000, "discount": 0, "rating": 4.2, "ratingCount": 384, "image": "ph:cart-headphone", "stock": 4 } }], "totalDiscount": 2500000 } },
+    "CartDropdown": { "label": "منوی بازشونده سبد", "group": "سبد و پرداخت", "defaultProps": { "count": 3, "items": [{ "qty": 1, "product": { "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:cart-dropdown", "stock": 12 } }] } },
+    "CartDisplay": { "label": "نمایش responsive سبد", "group": "سبد و پرداخت", "defaultProps": { "count": 3, "items": [{ "qty": 1, "product": { "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:cart-display", "stock": 12 } }] } }
+  }
+}

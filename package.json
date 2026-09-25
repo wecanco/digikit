@@ -1,0 +1,35 @@
+{
+  "name": "digikit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DigiKit — open-source RTL React UI kit for Persian products",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wecanco/digikit.git"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10"
+  },
+  "workspaces": [
+    "packages/ui",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@digikit/web",
+    "dev:docs": "npm run dev --workspace=@digikit/web",
+    "build": "npm run build --workspace=@digikit/web",
+    "build:docs": "npm run build --workspace=@digikit/web",
+    "typecheck": "npm run typecheck --workspace=@digikit/web",
+    "generate:barrel": "node tools/gen-barrel.mjs",
+    "generate:kit": "node tools/gen-kit-registry.mjs",
+    "generate": "npm run generate:barrel && npm run generate:kit",
+    "test:smoke": "node tools/react-probe.mjs",
+    "pack:ui": "npm pack --workspace=@digikit/ui"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}

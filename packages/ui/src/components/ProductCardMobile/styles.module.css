@@ -1,0 +1,53 @@
+/* کارت موبایل خانه — پورت وفادار productCardMobile از ui.js:68-78:
+   flex-col bg-white p-2، تصویر مربع + بج، عنوان ۱خطی ۱۱px، قیمت sm چسبیده به پایین */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 8px;
+  background: var(--dk-card);
+}
+
+.imgLink {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+/* بج تخفیف — end-1.5 مثل مرجع؛ sm چون موبایل است */
+.badge {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-end: 6px;
+  z-index: 1;
+  display: flex;
+}
+
+.img {
+  box-sizing: border-box;
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+/* عنوان ۱خطی ۱۱px (line-clamp-1 text-[11px] در مرجع) */
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin-block-start: 4px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+}
+
+/* قیمت در پایین کارت (mt-auto pt-1) */
+.price {
+  margin-block-start: auto;
+  padding-block-start: 4px;
+}

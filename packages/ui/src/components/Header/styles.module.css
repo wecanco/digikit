@@ -1,0 +1,294 @@
+/* هدر — sticky top-0 z-40؛ ردیف ۱: pt-3 pb-2 gap-7، پیل h-11 w-492؛ ردیف ۲: py-3 با border-t؛ موبایل: h-68px */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+  box-shadow: var(--dk-shadow-card);
+}
+
+/* ── دسکتاپ (≥1024px) ── */
+.row1Wrap,
+.row2Wrap {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .row1Wrap,
+  .row2Wrap {
+    display: block;
+    max-width: 1650px;
+    margin-inline: auto;
+    padding-inline: 16px; /* px-4 */
+  }
+}
+
+.row1 {
+  display: flex;
+  align-items: center;
+  gap: 28px; /* gap-7 */
+  padding-block-start: 12px; /* pt-3 */
+  padding-block-end: 8px; /* pb-2 */
+}
+
+.logo {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 32px;
+  font-weight: 900; /* font-black */
+  line-height: 1;
+  color: var(--dk-primary-500);
+}
+
+.logoTextMobile {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--dk-primary-500);
+}
+
+.pillWrap {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.searchPill {
+  width: 492px;
+  flex-shrink: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* gap-3 */
+}
+
+.iconLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px; /* p-1.5 */
+  color: var(--dk-ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.iconLink:hover {
+  color: var(--dk-primary-500);
+}
+
+/* بج قرمز اعلان/سبد — h-4.5 min-w-18 rounded-pill */
+.badge {
+  position: absolute;
+  bottom: -4px;
+  inset-inline-start: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  min-width: 18px;
+  padding-inline: 4px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-primary-500);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* پیل ورود — border rounded-8px px-2.5 py-2 */
+.login {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* gap-1 */
+  padding: 8px 10px;
+  border: 1px solid var(--dk-neutral-400);
+  border-radius: 8px;
+  background: none;
+  color: var(--dk-ink);
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.login:hover {
+  color: var(--dk-primary-500);
+  border-color: var(--dk-primary-400);
+}
+
+.loginText {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 1px;
+  height: 24px; /* h-6 */
+  background: var(--dk-neutral-300);
+}
+
+/* ردیف ۲ — لینک‌های دسته؛ حاشیه روی خودِ کانتینر می‌نشیند (مثل منبع) */
+.row2Wrap {
+  position: relative; /* لنگرگاه مگامنو */
+}
+
+@media (min-width: 1024px) {
+  .row2Wrap {
+    border-block-start: 1px solid var(--dk-neutral-100);
+  }
+}
+
+.row2 {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* gap-6 */
+}
+
+.row2Start {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+}
+
+.megaTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* gap-1.5 */
+  padding-block: 12px; /* py-3 */
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dk-ink);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.megaTrigger:hover {
+  color: var(--dk-primary-500);
+}
+
+.row2Link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-block: 12px; /* py-3 */
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.row2Link:hover,
+.row2LinkActive {
+  color: var(--dk-primary-500);
+}
+
+.row2LinkActive {
+  font-weight: 700;
+}
+
+.row2End {
+  margin-inline-start: auto; /* ms-auto */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.row2Divider {
+  width: 1px;
+  height: 16px; /* h-4 */
+  background: var(--dk-neutral-300);
+}
+
+/* ── موبایل (<1024px): نوار ۶۸px ── */
+.mobileBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 68px;
+  padding-inline: 16px;
+}
+
+@media (min-width: 1024px) {
+  .mobileBar {
+    display: none;
+  }
+}
+
+/* پیل خاکستری جستجو — h-9 rounded-full bg-neutral-200 */
+.searchBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px; /* h-9 */
+  flex: 1;
+  max-width: 400px;
+  margin-inline: auto;
+  padding-inline: 14px;
+  border: 0;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-neutral-200);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.searchBtnIcon {
+  flex-shrink: 0;
+  color: var(--dk-ink-mute);
+}
+
+.searchBtnText {
+  min-width: 0;
+  font-size: 12px;
+  color: var(--dk-ink-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.mobileIconBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 0;
+  background: none;
+  color: var(--dk-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.mobileIconBtn:hover {
+  color: var(--dk-primary-500);
+}
+
+.login:focus-visible,
+.megaTrigger:focus-visible,
+.searchBtn:focus-visible,
+.mobileIconBtn:focus-visible,
+.iconLink:focus-visible,
+.row2Link:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}

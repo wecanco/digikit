@@ -1,0 +1,94 @@
+/* شیت پایین — backdrop مشکی ۳۰٪ + ورق slide-up (0.22s ease-out) */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(0, 0, 0, 0.3);
+  animation: nbSheetFade 0.22s ease-out;
+}
+
+.sheet {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 8px 16px 16px; /* p-4 pt-2 */
+  background: #fff;
+  border-start-start-radius: 16px; /* rounded-t-2xl */
+  border-start-end-radius: 16px;
+  box-shadow: var(--dk-shadow-pop);
+  animation: nbSheetUp 0.22s ease-out;
+}
+
+/* دستگیره کشیدن: ۳۲×۴px وسط، mt-1 mb-3 */
+.handle {
+  width: 32px;
+  height: 4px;
+  margin: 4px auto 12px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-neutral-400);
+}
+
+/* سربرگ: grid سه‌ستونه تا عنوان دقیقاً وسط بماند و ضربدر انتهای inline (چپ در RTL) */
+.head {
+  display: grid;
+  grid-template-columns: 32px 1fr 32px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.headSpacer {
+  width: 32px;
+}
+
+.title {
+  grid-column: 2;
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dk-ink);
+}
+
+.description {
+  margin: 0 0 12px;
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-sm);
+  line-height: var(--dk-line-normal);
+}
+
+.close {
+  grid-column: 3;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: var(--dk-radius-pill);
+  background: transparent;
+  color: var(--dk-ink-mute);
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+.close:hover {
+  background: var(--dk-neutral-100);
+  color: var(--dk-ink);
+}
+
+@keyframes nbSheetFade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes nbSheetUp {
+  from {
+    transform: translateY(100%);
+  }
+}

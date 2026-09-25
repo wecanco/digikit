@@ -1,0 +1,66 @@
+/* کاشی‌های خدمات موبایل (partials.js:410-421) — فقط <1024px
+   no-scrollbar flex gap-2 overflow-x-auto px-4 pt-0.5 lg:hidden */
+
+.row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 16px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.row::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .row {
+    display: none;
+  }
+}
+
+/* کاشی — h-14 w-16 rounded-2xl؛ سفید با سایه ظریف یا توپر قرمز */
+.tile {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 64px;
+  height: 56px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease;
+}
+.tile:hover {
+  opacity: 0.85;
+}
+.tileRed {
+  background: var(--dk-primary-500);
+  box-shadow: none;
+}
+
+/* گلیف «٪» کاشی قرمز — flex h-7 w-7 text-[20px] font-black leading-none text-white */
+.percent {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* برچسب — text-[9px] font-bold text-primary-600 (سفید روی کاشی قرمز) */
+.label {
+  color: var(--dk-primary-600);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+.labelRed {
+  color: #fff;
+}

@@ -1,0 +1,13 @@
+{
+  "components": {
+    "CategoryList": { "label": "فهرست دسته‌بندی مرجع", "group": "تجارت و محصول", "defaultProps": { "title": "خرید بر اساس دسته‌بندی", "items": [{ "id": "mobile", "name": "موبایل", "image": "ph:mobile", "href": "/products" }, { "id": "laptop", "name": "لپ‌تاپ", "image": "ph:laptop", "href": "/products" }, { "id": "audio", "name": "هدفون", "image": "ph:audio", "href": "/products" }] } },
+    "CategorySelector": { "label": "انتخابگر دسته‌بندی مرجع", "group": "تجارت و محصول", "defaultProps": { "categories": [{ "id": "digital", "name": "کالای دیجیتال", "level": 1 }, { "id": "mobile", "name": "موبایل", "parent": "digital", "level": 2 }, { "id": "phone", "name": "گوشی موبایل", "parent": "mobile", "level": 3 }], "value": {} } },
+    "ServiceList": { "label": "فهرست خدمات مرجع", "group": "تجارت و محصول", "defaultProps": { "items": [{ "icon": "bolt", "title": "ارسال سریع", "desc": "تحویل مطمئن", "color": "#ef394e" }, { "icon": "credit", "title": "پرداخت امن", "desc": "با خیال راحت", "color": "#00a049" }] } },
+    "CartIconBadge": { "label": "نشان سبد خرید مرجع", "group": "سبد و پرداخت", "defaultProps": { "count": 3 } },
+    "FreeShippingIndicator": { "label": "نشان ارسال رایگان", "group": "سبد و پرداخت", "defaultProps": { "threshold": 70000000 } },
+    "CartDiscountItem": { "label": "آیتم تخفیف سبد", "group": "سبد و پرداخت", "defaultProps": { "code": "DIGI1405", "amount": 250000, "applied": false } },
+    "CartItemActions": { "label": "عملیات آیتم سبد", "group": "سبد و پرداخت", "defaultProps": { "value": 2, "min": 1, "max": 5 } },
+    "AddToCartButton": { "label": "عملیات افزودن به سبد", "group": "سبد و پرداخت", "defaultProps": { "product": { "price": 61990000, "stock": 12 }, "quantity": 1, "maxQuantity": 5 } },
+    "CartOperations": { "label": "عملیات خرید مرجع", "group": "سبد و پرداخت", "defaultProps": { "product": { "price": 61990000, "stock": 12 }, "quantity": 1, "maxQuantity": 5 } }
+  }
+}

@@ -1,0 +1,48 @@
+/* شبکه محصولات — ترجمه grid grid-cols-2 gap-px bg-neutral-400 md:grid-cols-3
+   lg:grid-cols-4 (ترفند خط‌مویی دسته‌بندی‌ها/جستجو: فاصله ۱px با پس‌زمینه
+   neutral-400 و سلول‌های سفید) و حالت ساده grid gap-3 … xl:grid-cols-5.
+   تعداد ستون‌های lg با متغیر --cols-lg از پراپ columns بازنویسی می‌شود. */
+
+.bareGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--dk-neutral-400);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px; /* gap-3 */
+}
+
+/* سلول — فقط در حالت خط‌مویی سفید است تا خطوط ۱px دیده شوند */
+.cell {
+  min-width: 0;
+}
+.bareGrid .cell {
+  background: var(--dk-card);
+}
+
+/* md (768px): ۳ ستون */
+@media (min-width: 768px) {
+  .bareGrid,
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* lg (1024px): ۴ ستون — یا مقدار columns از پراپ (از طریق --cols-lg) */
+@media (min-width: 1024px) {
+  .bareGrid,
+  .grid {
+    grid-template-columns: repeat(var(--cols-lg, 4), minmax(0, 1fr));
+  }
+}
+
+/* xl (1280px): حالت ساده ۵ ستون (مثل صفحات اصلی) */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

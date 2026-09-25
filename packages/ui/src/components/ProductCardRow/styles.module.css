@@ -1,0 +1,109 @@
+/* ردیف لیست PLP — آناتومی بدون قاب m23 §2.6 (flex gap-4 p-4 items-start) با
+   جزئیات productCardRow در ui.js:124-146 (بج دایره‌ای، چیپ‌ها، ردیف پایانی) */
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px; /* gap-4 */
+  padding: 16px; /* p-4 */
+  font-family: var(--dk-font-family);
+}
+
+/* تصویر ۱۱۸×۱۱۸ (m23 §2.6: thumbnail 118×118 radius 8) */
+.thumb {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  width: 118px;
+  height: 118px;
+  border-radius: 8px; /* rounded-lg */
+  overflow: hidden;
+  background: #fff;
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* بج تخفیف روی تصویر — جای‌گذاری مصرف‌کننده (top-1.5 end-1.5 z-10) */
+.badge {
+  position: absolute;
+  top: 6px;
+  inset-inline-end: 6px;
+  z-index: 1;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 8px; /* mb-2 */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6; /* 14px/1.6 */
+  color: var(--dk-ink);
+  text-decoration: none;
+}
+.title:hover {
+  color: var(--dk-primary-500);
+}
+
+/* ردیف چیپ‌ها — پورت mt-1 flex-wrap gap-1.5 از ui.js:134 */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px; /* gap-1.5 */
+  margin-top: 4px; /* mt-1 */
+}
+
+/* چیپ ارسال امروز — آناتومی bg-success-50 text-success با آیکون کامیون */
+.chipExpress {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  padding: 2px 6px; /* px-1.5 py-0.5 */
+  background: var(--dk-success-50);
+  color: var(--dk-success);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* چیپ گارانتی — bg-neutral-100 text-ink-mute از ui.js:136 */
+.chipWarranty {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2px 6px;
+  background: var(--dk-neutral-100);
+  color: var(--dk-ink-mute);
+  font-size: 10px;
+}
+
+/* ردیف پایانی — mt-auto pt-2 justify-between: کنترل سبد در آغاز، قیمت در انتهای ردیف */
+.foot {
+  margin-top: auto;
+  padding-top: 8px; /* pt-2 */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* «sm» روی Button پایه — سلکتور تودرتو برای غلبه بر padding/font-size خود .btn */
+.foot .addBtn {
+  padding: 8px 12px;
+  font-size: 12px;
+}

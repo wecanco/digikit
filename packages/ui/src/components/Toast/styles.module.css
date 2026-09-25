@@ -1,0 +1,62 @@
+/* توست — پایین‌وسط صفحه؛ موبایل بالای نویگیشن پایین (۹۶px)، دسکتاپ ۲۴px (md:bottom-6 وانیلا) */
+
+.stack {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 96px; /* bottom-24 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100; /* z-[100] */
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .stack {
+    bottom: 24px; /* md:bottom-6 */
+  }
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 32px);
+  border-radius: 8px; /* rounded-lg */
+  background: #fff;
+  padding: 10px 16px; /* py-2.5 px-4 */
+  box-shadow: var(--dk-shadow-pop);
+  animation: nbToastUp 0.3s ease both;
+  pointer-events: auto;
+}
+
+.msg {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dk-ink);
+  white-space: pre-line;
+}
+
+.iconSuccess {
+  flex: 0 0 auto;
+  color: var(--dk-success);
+}
+.iconError {
+  flex: 0 0 auto;
+  color: var(--dk-primary-500);
+}
+.iconInfo {
+  flex: 0 0 auto;
+  color: var(--dk-warning);
+}
+
+@keyframes nbToastUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

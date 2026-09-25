@@ -1,0 +1,6 @@
+{
+  "components": {
+    "LargeBanner": { "label": "بنر بزرگ مرجع", "group": "تجارت و محصول", "defaultProps": { "items": [{ "id": "hero-1", "src": "ph:hero-1", "alt": "بنر معرفی محصول", "href": "/products" }, { "id": "hero-2", "src": "ph:hero-2", "alt": "بنر پیشنهاد ویژه", "href": "/products" }] } },
+    "SmallBanner": { "label": "بنرهای کوچک مرجع", "group": "تجارت و محصول", "defaultProps": { "items": [{ "id": "small-1", "src": "ph:small-1", "alt": "بنر کوچک اول" }, { "id": "small-2", "src": "ph:small-2", "alt": "بنر کوچک دوم" }, { "id": "small-3", "src": "ph:small-3", "alt": "بنر کوچک سوم" }, { "id": "small-4", "src": "ph:small-4", "alt": "بنر کوچک چهارم" }] } }
+  }
+}

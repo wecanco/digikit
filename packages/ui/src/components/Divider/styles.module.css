@@ -1,0 +1,5 @@
+.divider { display: flex; align-items: center; color: var(--dk-ink-mute); font-size: var(--dk-font-size-xs); }
+.horizontal { width: 100%; min-height: 1px; }.horizontal::before, .horizontal::after { content: ''; flex: 1; height: 1px; background: var(--dk-border-subtle); }
+.horizontal:not(.withLabel)::after { display: none; }
+.horizontal span { padding-inline: var(--dk-space-3); }
+.vertical { align-self: stretch; width: 1px; min-height: 24px; background: var(--dk-border-subtle); }

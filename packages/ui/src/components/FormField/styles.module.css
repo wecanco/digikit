@@ -1,0 +1,5 @@
+.field { display: grid; gap: 7px; min-width: 0; }
+.label { color: var(--dk-ink-soft); font-size: var(--dk-font-size-sm); font-weight: 700; }
+.label span { color: var(--dk-danger); }
+.hint, .error { margin: 0; font-size: var(--dk-font-size-xs); line-height: 1.6; }
+.hint { color: var(--dk-ink-mute); }.error { color: var(--dk-danger); }

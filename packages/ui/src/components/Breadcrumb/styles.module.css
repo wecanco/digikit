@@ -1,0 +1,45 @@
+/* برد کرامب — ol فلکس شکست‌خور با gap-x ۶px / gap-y ۲px (gap-x-1.5 gap-y-0.5)، متن ۱۲px */
+
+.nav {
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 6px;
+  row-gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* غیرفعال: خاکستری mute، هاور قرمز برند */
+.link {
+  color: var(--dk-ink-mute);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.link:hover {
+  color: var(--dk-primary-500);
+}
+
+.passive {
+  color: var(--dk-ink-mute);
+}
+
+/* صفحه جاری: وزن ۵۰۰ و رنگ نرم‌تر */
+.current {
+  color: var(--dk-ink-soft);
+  font-weight: 500;
+}
+
+/* جداکننده — در RTL جهتِ پیشروی فیزیکی چپ است (ChevronLeft) */
+.sep {
+  display: flex;
+  align-items: center;
+  color: var(--dk-ink-faint);
+}

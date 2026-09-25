@@ -1,0 +1,8 @@
+{
+  "components": {
+    "BannerCarousel": { "label": "کاروسل بنر مرجع", "group": "تجارت و محصول", "defaultProps": { "items": [{ "id": "banner-1", "src": "ph:banner-1", "alt": "بنر اول" }, { "id": "banner-2", "src": "ph:banner-2", "alt": "بنر دوم" }], "autoplay": false } },
+    "ProductCarousel": { "label": "کاروسل محصول مرجع", "group": "تجارت و محصول", "defaultProps": { "title": "محبوب‌ترین کالاها", "products": [{ "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:carousel-1", "stock": 12 }, { "id": 2, "title": "هدفون بی‌سیم", "brand": "شیائومی", "cat": "audio", "price": 2490000, "discount": 0, "rating": 4.2, "ratingCount": 384, "image": "ph:carousel-2", "stock": 4 }] } },
+    "RankingCarousel": { "label": "کاروسل پرفروش‌ها", "group": "تجارت و محصول", "defaultProps": { "products": [{ "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:ranking-1", "stock": 12 }, { "id": 2, "title": "لپ‌تاپ ایسوس", "brand": "ایسوس", "cat": "laptop", "price": 42990000, "discount": 6, "rating": 4.4, "ratingCount": 872, "image": "ph:ranking-2", "stock": 7 }] } },
+    "DiscountCarousel": { "label": "کاروسل تخفیف مرجع", "group": "تجارت و محصول", "defaultProps": { "products": [{ "id": 1, "title": "گوشی موبایل سامسونگ", "brand": "سامسونگ", "cat": "mobile", "price": 61990000, "discount": 8, "rating": 4.6, "ratingCount": 2541, "image": "ph:discount-1", "stock": 12 }, { "id": 2, "title": "لپ‌تاپ ایسوس", "brand": "ایسوس", "cat": "laptop", "price": 42990000, "discount": 6, "rating": 4.4, "ratingCount": 872, "image": "ph:discount-2", "stock": 7 }] } }
+  }
+}

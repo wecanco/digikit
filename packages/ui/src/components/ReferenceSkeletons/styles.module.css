@@ -1,0 +1,151 @@
+.address,
+.navbar,
+.order,
+.review,
+.sidebar,
+.subCategories,
+.table {
+  min-width: 0;
+}
+
+.address,
+.stack,
+.productGrid,
+.sidebar,
+.subCategories,
+.table {
+  display: grid;
+  gap: 12px;
+}
+
+.address {
+  padding: 16px 20px;
+}
+
+.addressRow,
+.navbar,
+.orderHead,
+.orderImages,
+.productFoot,
+.reviewHead,
+.sidebarRow,
+.subCategoryTrack {
+  display: flex;
+  align-items: center;
+}
+
+.addressRow {
+  gap: 8px;
+  color: var(--dk-ink-mute);
+}
+
+.navbar {
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 12px 16px;
+}
+
+.stack {
+  min-width: 0;
+}
+
+.order,
+.review {
+  display: grid;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--dk-border-subtle);
+}
+
+.orderHead,
+.productFoot,
+.sidebarRow {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.orderImages {
+  gap: 10px;
+  overflow: hidden;
+}
+
+.orderImages > * {
+  flex: 0 0 auto;
+  border-radius: var(--dk-radius-sm);
+}
+
+.productGrid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.product {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+}
+
+.product > :first-child {
+  min-height: 180px;
+}
+
+.productFoot {
+  align-items: flex-end;
+}
+
+.reviewHead {
+  gap: 10px;
+}
+
+.reviewHeadCopy {
+  display: grid;
+  flex: 1;
+  gap: 7px;
+}
+
+.sidebar {
+  padding: 12px;
+  border: 1px solid var(--dk-border-subtle);
+  border-radius: var(--dk-radius-md);
+}
+
+.sidebarRow {
+  min-height: 42px;
+}
+
+.subCategories {
+  overflow: hidden;
+}
+
+.subCategoryTrack {
+  gap: 12px;
+  overflow: hidden;
+}
+
+.subCategory {
+  display: grid;
+  justify-items: center;
+  flex: 0 0 96px;
+  gap: 8px;
+}
+
+.subCategory > :first-child {
+  border-radius: var(--dk-radius-md);
+}
+
+.table > * {
+  border-radius: var(--dk-radius-xs);
+}
+
+@media (max-width: 640px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product > :first-child {
+    min-height: 140px;
+  }
+}

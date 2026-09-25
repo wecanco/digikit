@@ -1,0 +1,14 @@
+{
+  "components": {
+    "DataStateDisplay": { "label": "نمایش وضعیت داده مرجع", "group": "عملیات و وضعیت", "defaultProps": { "isError": false, "isFetching": false, "isSuccess": true, "dataLength": 2, "children": "داده‌های دریافت‌شده" } },
+    "InlineLoading": { "label": "بارگذاری درون‌خطی مرجع", "group": "عملیات و وضعیت", "defaultProps": { "label": "در حال دریافت اطلاعات..." } },
+    "FullScreenLoading": { "label": "بارگذاری تمام‌صفحه مرجع", "group": "عملیات و وضعیت", "defaultProps": { "label": "در حال بارگذاری صفحه..." } },
+    "EmptyComment": { "label": "وضعیت خالی دیدگاه", "group": "عملیات و وضعیت" },
+    "EmptyCommentsList": { "label": "وضعیت فهرست دیدگاه", "group": "عملیات و وضعیت" },
+    "EmptyCustomList": { "label": "وضعیت فهرست سفارشی", "group": "عملیات و وضعیت" },
+    "EmptyOrdersList": { "label": "وضعیت فهرست سفارش", "group": "عملیات و وضعیت" },
+    "EmptySearchList": { "label": "وضعیت نتیجه جستجو", "group": "عملیات و وضعیت" },
+    "EmptyUsersList": { "label": "وضعیت فهرست کاربران", "group": "عملیات و وضعیت" },
+    "ErrorAction": { "label": "اقدام خطا", "group": "عملیات و وضعیت" }
+  }
+}

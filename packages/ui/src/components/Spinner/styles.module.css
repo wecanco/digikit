@@ -1,0 +1,16 @@
+/* اسپینر — چرخش خطی ۰.۸ ثانیه */
+
+.spinner {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-bottom-color: var(--dk-primary-500);
+  border-radius: 50%;
+  animation: nbSpin 0.8s linear infinite;
+}
+
+@keyframes nbSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

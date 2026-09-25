@@ -1,0 +1,121 @@
+/* ورودی متن — ترجمه ۱:۱ از .input-base/.input-search/.input-search-muted در main.css دموی Vite */
+
+.input {
+  width: 100%;
+  border: 1px solid var(--dk-neutral-400);
+  min-height: 44px;
+  border-radius: var(--dk-radius-sm);
+  background: var(--dk-surface);
+  color: var(--dk-ink);
+  padding: 0 12px;
+  font-size: var(--dk-font-size-md);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.input::placeholder {
+  color: var(--dk-ink-faint);
+}
+.input:focus {
+  border-color: var(--dk-primary-400);
+  box-shadow: 0 0 0 2px var(--dk-primary-100); /* focus:ring-2 ring-primary-100 */
+}
+.input:disabled { cursor: not-allowed; background: var(--dk-neutral-100); color: var(--dk-ink-faint); }
+.input.invalid { border-color: var(--dk-danger); }
+.input.invalid:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--dk-danger) 18%, transparent); }
+.sm { min-height: 36px; font-size: var(--dk-font-size-sm); }
+.md { min-height: 44px; }
+.lg { min-height: 52px; font-size: var(--dk-font-size-lg); }
+.field { position: relative; display: flex; align-items: center; width: 100%; }
+.field .input { min-width: 0; flex: 1; }
+.field.hasStartAdornment .input { padding-inline-start: 40px; }
+.field.hasEndAdornment .input { padding-inline-end: 40px; }
+.adornment { position: absolute; z-index: 1; display: inline-flex; align-items: center; color: var(--dk-ink-mute); pointer-events: none; }
+.startAdornment { inset-inline-start: 12px; }
+.endAdornment { inset-inline-end: 12px; }
+
+/* جستجوی دسکتاپ: مثل base با پدینگ افقی ۱۶px (px-4) */
+.search {
+  padding-inline: 16px;
+}
+
+/* جستجوی موبایل: پیل خاکستری بدون حاشیه، متن ۱۲px، با فوکوس سفید می‌شود */
+.searchMuted {
+  border: 0;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-neutral-100);
+  padding: 8px 16px; /* py-2 px-4 */
+  font-size: 12px; /* text-xs */
+}
+.searchMuted:focus {
+  background: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--dk-primary-100);
+}
+
+/* ─── پیل جستجوی هدر دسکتاپ (partials.js 121-130) ─── */
+
+.pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* gap-2.5 */
+  height: 44px; /* h-11 — پیکسل‌راستی‌آزموده */
+  width: 492px; /* w-[492px] */
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 0 0 auto; /* shrink-0 */
+  padding-inline: 16px; /* px-4 */
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-neutral-300); /* #f0f0f1 */
+  transition: box-shadow 0.15s ease;
+}
+
+.pillIcon {
+  flex: 0 0 auto;
+  color: var(--dk-primary-500);
+}
+
+.pillField {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+}
+
+.pillInput {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--dk-ink);
+  font-size: 13px; /* text-[13px] */
+  font-weight: 500; /* font-medium */
+  font-family: inherit;
+  outline: none;
+}
+
+/* اورلی دوردیفه «جستجو در دیجی‌کیت» — فقط وقتی ورودی خالی است دیده می‌شود
+   (ترفند :placeholder-shown با placeholder=" ") */
+.pillOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px; /* gap-1 */
+  font-size: 13px;
+  pointer-events: none;
+}
+.pillInput:not(:placeholder-shown) + .pillOverlay {
+  visibility: hidden;
+}
+
+.overlayPre {
+  color: var(--dk-ink-mute);
+  opacity: 0.8;
+}
+.overlayBrand {
+  color: var(--dk-primary-500);
+  font-weight: 900; /* font-black */
+}

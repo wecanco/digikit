@@ -1,0 +1,12 @@
+{
+  "components": {
+    "AddressSkeleton": { "label": "اسکلتون آدرس", "group": "عملیات و وضعیت" },
+    "NavbarSkeleton": { "label": "اسکلتون ناوبری", "group": "عملیات و وضعیت" },
+    "OrderSkeleton": { "label": "اسکلتون سفارش", "group": "عملیات و وضعیت", "defaultProps": { "count": 2 } },
+    "ProductSkeleton": { "label": "اسکلتون محصول", "group": "عملیات و وضعیت", "defaultProps": { "count": 4 } },
+    "ReviewSkeleton": { "label": "اسکلتون دیدگاه", "group": "عملیات و وضعیت", "defaultProps": { "count": 3 } },
+    "SidebarSkeleton": { "label": "اسکلتون سایدبار", "group": "عملیات و وضعیت", "defaultProps": { "count": 4 } },
+    "SubCategoriesSkeleton": { "label": "اسکلتون زیر‌دسته‌ها", "group": "عملیات و وضعیت", "defaultProps": { "count": 5 } },
+    "TableSkeleton": { "label": "اسکلتون جدول", "group": "عملیات و وضعیت", "defaultProps": { "count": 5 } }
+  }
+}

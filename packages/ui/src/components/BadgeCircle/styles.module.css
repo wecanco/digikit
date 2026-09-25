@@ -1,0 +1,35 @@
+/* نشان دایره‌ای تخفیف — پورت badgeCircle (ui.js:24-31)
+   قرمز برند، متن سفید بولد با ارقام لاتین.
+   md (پیش‌فرض): واکنش‌گرا 32px/11px → 36px/12px از 768px (h-8 w-8 → md:h-9 md:w-9)
+   sm: ثابت 32px/11px برای فضاهای تنگ */
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-primary-500);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .badge {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+/* بعد از مدیاکوئری تا در ≥768px هم برنده شود */
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 11px;
+}

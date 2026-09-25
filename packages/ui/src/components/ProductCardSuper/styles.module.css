@@ -1,0 +1,86 @@
+/* کارت سوپرمارکتی — کاشی کرم (آناتومی سوپرمارکت مرجع) + دکمه گرد سبز از
+   productCardSuper در ui.js:105-121 (h-7 w-7 rounded-full bg-success) */
+
+.card {
+  display: flex;
+  align-items: stretch;
+  gap: 8px; /* gap-2 */
+  padding: 12px; /* p-3 */
+  background: var(--dk-cream);
+  border-radius: var(--dk-radius-card);
+  font-family: var(--dk-font-family);
+}
+
+.imgBox {
+  display: block;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: 38px; /* دو خط ۱۲px × ۱٫۶ */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--dk-ink-soft);
+  text-decoration: none;
+}
+.title:hover {
+  color: var(--dk-primary-500);
+}
+
+.rating {
+  margin-top: 2px;
+}
+
+.foot {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/* دکمه افزودن — پورت ۱:۱ از ui.js:116 (flex h-7 w-7 rounded-full bg-success) */
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-success);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.add:hover {
+  opacity: 0.85;
+}
+.add:focus-visible {
+  outline: 2px solid var(--dk-primary-200);
+  outline-offset: 1px;
+}

@@ -1,0 +1,4 @@
+.wrap { position: relative; display: block; width: 100%; }
+.select { width: 100%; min-height: 44px; appearance: none; padding: 0 12px; padding-inline-end: 38px; border: 1px solid var(--dk-border); border-radius: var(--dk-radius-sm); background: var(--dk-surface); color: var(--dk-ink); cursor: pointer; outline: none; }
+.select:focus { border-color: var(--dk-primary-400); box-shadow: var(--dk-shadow-focus); }.select:disabled { cursor: not-allowed; opacity: .55; }.invalid { border-color: var(--dk-danger); }
+.icon { position: absolute; inset-inline-end: 12px; top: 50%; transform: translateY(-50%); color: var(--dk-ink-mute); pointer-events: none; }

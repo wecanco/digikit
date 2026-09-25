@@ -1,0 +1,141 @@
+.confirm,
+.filter,
+.search {
+  display: grid;
+  gap: 16px;
+}
+
+.confirm {
+  justify-items: center;
+  padding-top: 4px;
+  text-align: center;
+}
+
+.confirmIcon,
+.filterIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--dk-radius-pill);
+}
+
+.confirmIcon.danger {
+  background: var(--dk-danger-50);
+  color: var(--dk-danger);
+}
+
+.confirmIcon.primary,
+.filterIcon {
+  background: var(--dk-primary-50);
+  color: var(--dk-primary-600);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.filterIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.filterBody {
+  min-width: 0;
+  max-height: min(55vh, 520px);
+  overflow-y: auto;
+}
+
+.filter > .actions {
+  justify-content: flex-end;
+  padding-top: 14px;
+  border-top: 1px solid var(--dk-border-subtle);
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchForm > label,
+.searchForm > input {
+  flex: 1;
+  min-width: 0;
+}
+
+.results {
+  display: grid;
+  gap: 4px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.results a,
+.results button {
+  display: grid;
+  gap: 3px;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: var(--dk-radius-sm);
+  background: transparent;
+  color: var(--dk-ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+}
+
+.results a:hover,
+.results button:hover {
+  background: var(--dk-primary-50);
+}
+
+.results small {
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-xs);
+}
+
+.empty {
+  padding: 24px 12px;
+  color: var(--dk-ink-mute);
+  font-size: var(--dk-font-size-sm);
+  text-align: center;
+}
+
+.closeSearch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  justify-self: center;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: var(--dk-radius-sm);
+  background: transparent;
+  color: var(--dk-ink-mute);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--dk-font-size-xs);
+}
+
+.closeSearch:hover {
+  background: var(--dk-surface-subtle);
+  color: var(--dk-ink);
+}
+
+@media (max-width: 520px) {
+  .searchForm {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .searchForm > button {
+    width: 100%;
+  }
+}

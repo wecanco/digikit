@@ -1,0 +1,5 @@
+.label { display: inline-flex; align-items: flex-start; gap: 9px; color: var(--dk-ink-soft); cursor: pointer; font-size: var(--dk-font-size-sm); line-height: 1.6; }
+.box { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 20px; height: 20px; margin-top: 1px; border: 1.5px solid var(--dk-neutral-500); border-radius: 5px; background: var(--dk-surface); color: #fff; transition: background-color var(--dk-transition-fast), border-color var(--dk-transition-fast); }
+.box input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.box svg { opacity: 0; pointer-events: none; transition: opacity var(--dk-transition-fast); }.box:has(input:checked) { border-color: var(--dk-primary-500); background: var(--dk-primary-500); }.box:has(input:checked) svg { opacity: 1; }.box:has(input:focus-visible) { box-shadow: var(--dk-shadow-focus); }
+.label:has(input:disabled) { cursor: not-allowed; opacity: .5; }.copy { display: grid; gap: 1px; }.copy strong { font-weight: 600; }.copy small { color: var(--dk-ink-mute); font-size: var(--dk-font-size-xs); }

@@ -1,0 +1,76 @@
+/* کارت شگفت‌انگیز — کارت سفید داخل باند قرمز
+   عرض پیش‌فرض ۱۵۰px (widthClass مصرف‌کننده می‌تواند بازنویسی کند) */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 150px;
+  height: 100%;
+  padding: 10px;
+  background: var(--dk-card);
+  border-radius: var(--dk-radius-card);
+}
+
+.imgLink {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.thumb {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 4px 0 0;
+  min-height: 34px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--dk-ink);
+}
+
+.price {
+  margin-block-start: auto;
+  padding-block-start: 6px;
+}
+
+/* نوار «فروش رفته» */
+.track {
+  height: 6px;
+  margin-block-start: 6px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-neutral-300);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--dk-primary-500);
+  transition: width 300ms ease;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 4px 0 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--dk-ink-mute);
+}

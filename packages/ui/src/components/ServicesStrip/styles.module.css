@@ -1,0 +1,131 @@
+/* نوار خدمات — خدمات‌های نوار (partials.js:372-397)
+   موبایل: دیسک‌های توپر ۴۰px در ردیف اسکرول افقی؛ دسکتاپ: دایره‌های 52px با justify-between */
+
+.strip {
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* ─── موبایل: no-scrollbar flex gap-[8px] overflow-x-auto px-5 pt-3 ─── */
+.mobileRow {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mobileRow::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileItem {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 64px;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+.mobileItem:hover {
+  opacity: 0.7;
+}
+
+/* دیسک دایره‌ای — h-10 w-10 rounded-full با گلیف سفید */
+.disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--dk-radius-pill);
+  color: #fff;
+}
+.discDesktop {
+  width: 52px;
+  height: 52px;
+  transition: opacity 0.2s ease;
+}
+
+.mobileLabel {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+/* واژه‌نگار داخل دیسک (کاشی سیاه «دیجی‌کیت») — text-[10px] font-black */
+.wordmark {
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* ─── دسکتاپ: hidden items-center justify-between gap-1.5 lg:flex ───
+   padding-inline جبرانی lg:px-4 ظرف #main دموی وانیلا را می‌دهد */
+.desktopRow {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .mobileRow {
+    display: none;
+  }
+  .desktopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-inline: 16px;
+  }
+}
+
+.desktopItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 92px;
+  text-align: center;
+}
+.desktopItem:hover .disc {
+  opacity: 0.85;
+}
+
+/* نشان قرمز کوچک (دیجی‌کیت کلاب «۲») — absolute start-[58px] top-0 ring-2 ring-white */
+.badge {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 58px;
+  z-index: 1;
+  display: flex;
+  height: 16px;
+  min-width: 16px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 4px;
+  border-radius: var(--dk-radius-pill);
+  background: var(--dk-primary-500);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.desktopLabel {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--dk-ink-soft);
+}
+
+/* کاشی «⋯» خدمات بیشتر — bg-[#ededf0] text-xl font-black text-ink */
+.discMore {
+  background: #ededf0;
+  color: var(--dk-ink);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+}

@@ -1,0 +1,41 @@
+/* سرتیتر بخش — پورت ۱:۱ از .section-title/.see-all (main.css:110-115)
+   مثل idiom ردیف‌های صفحه خانه: <div class="flex items-center justify-between"> */
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px; /* text-base */
+  font-weight: 800; /* font-extrabold */
+  color: var(--dk-ink);
+  line-height: 1.6;
+}
+
+/* see-all — inline-flex با شِورون چپ (جهت «جلو» در RTL) */
+.seeAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px; /* gap-0.5 */
+  font-size: 12px; /* text-xs */
+  font-weight: 600;
+  color: var(--dk-primary-500);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.seeAll:hover {
+  color: var(--dk-primary-600);
+}
+
+@media (min-width: 768px) {
+  /* md: */
+  .title {
+    font-size: 18px; /* md:text-lg */
+  }
+  .seeAll {
+    font-size: 14px; /* md:text-sm */
+  }
+}

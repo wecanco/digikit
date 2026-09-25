@@ -1,0 +1,6 @@
+.wrap { width: 100%; }
+.meta { display: flex; justify-content: space-between; gap: var(--dk-space-3); margin-bottom: 6px; color: var(--dk-ink-soft); font-size: var(--dk-font-size-sm); }
+.track { overflow: hidden; width: 100%; border-radius: var(--dk-radius-pill); background: var(--dk-neutral-200); }
+.sm { height: 4px; }.md { height: 7px; }.lg { height: 10px; }
+.fill { display: block; height: 100%; border-radius: inherit; transition: width var(--dk-transition-normal); }
+.primary { background: var(--dk-primary-500); }.success { background: var(--dk-success); }.warning { background: var(--dk-warning); }.danger { background: var(--dk-danger); }
